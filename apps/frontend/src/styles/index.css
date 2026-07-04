@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Font */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  /* Palette */
+  --color-primary: theme(--color-amber-300);       
+  --color-primary-hover: theme(--color-amber-400);
+  --color-secondary: theme(--color-lime-700);     
+  
+  --color-app-bg: theme(--color-gray-100);     
+  --color-card-bg: theme(--color-white);    
+
+  --color-text-main: theme(--color-slate-950);   
+  --color-text-muted: theme(--color-slate-500);   
+
+  --color-border-main: theme(--color-slate-200); 
+
+  --color-gray-light: theme(--color-gray-400);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply font-sans antialiased bg-app-bg text-text-main;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+  }
+}
+
+@layer components {
+  /* .btn-primary {
+    @apply px-4 py-2 bg-blue-600 text-white font-medium rounded-lg 
+           hover:bg-blue-700 active:scale-95 transition-all duration-200 
+           disabled:opacity-50 disabled:pointer-events-none;
+  } */
+}

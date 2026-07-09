@@ -8,15 +8,19 @@ interface IconProps {
 
 export const Icon = (
     {
-        name,
+        name = 'Default',
         className = ''
     }: IconProps
 ) => {
     const SvgComponent: SVGComponent = svgs[name];
-    console.log(svgs)
     return (
         <div className={`w-full h-full ${className}`}>
-            {SvgComponent && <SvgComponent/>}
+            {SvgComponent && <SvgComponent
+                className="w-full h-full"
+                fill="currentColor"
+                width="100%"
+                height="100%"
+            />}
         </div>
     );
 }

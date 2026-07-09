@@ -24,10 +24,9 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
-  }
-
-  body {
-    @apply font-sans antialiased bg-app-bg text-text-main;
+    font-family: var(--font-sans);
+    color: var(--color-text-main);
+    background-color: var(--color-app-bg);
   }
 
   ::-webkit-scrollbar {

@@ -1,5 +1,5 @@
 import { Image, Icon, Button, type ButtonIconProps } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, type ButtonSelectionL2 } from '@/components/atomic/molecules'
+import { ButtonTextList, type ButtonSelectionL1 } from '@/components/atomic/molecules'
 import React from 'react';
 
 
@@ -21,10 +21,6 @@ export function DesignSystemPage() {
         iconName: 'DropDown',
         iconPosition: 'right',
     }
-
-    // const buttonSelectionChildren: ButtonSelectionL2[] = {
-    //     {text: }
-    // }
 
     const buttonSelections: ButtonSelectionL1[] = [
         {

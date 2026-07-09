@@ -18,8 +18,6 @@ export const Icon = (
             {SvgComponent && <SvgComponent
                 className="w-full h-full"
                 fill="currentColor"
-                width="100%"
-                height="100%"
             />}
         </div>
     );

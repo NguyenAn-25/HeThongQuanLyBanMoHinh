@@ -1,1 +1,2 @@
-export {DesignSystemPage} from "./DesignSystemPage/DesignSystemPage"
+export { DesignSystemPage } from "./DesignSystemPage/DesignSystemPage"
+export { HomePage } from "./HomePage/HomePage"

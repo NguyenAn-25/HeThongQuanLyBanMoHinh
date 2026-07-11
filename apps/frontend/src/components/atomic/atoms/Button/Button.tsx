@@ -3,7 +3,7 @@ import { Icon } from "@/components/atomic/atoms"
 export interface ButtonIconProps {
     iconPosition: "left" | "right",
     iconName: string,
-    size?: keyof typeof SIZE_CLASSES
+    size?: keyof typeof SIZE_CLASSES,
 }
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,9 +13,13 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const SIZE_CLASSES = {
-  small: 'w-5 h-5',
-  medium: 'w-6 h-6',
-  large: 'w-7 h-7',
+    xs: 'w-5',
+    sm: 'w-7',
+    md: 'w-10',
+    lg: 'w-12',
+    xl: 'w-15',
+    '2xl': 'w-24',
+    '3xl': 'w-30',
 };
 
 export const Button = (
@@ -23,17 +27,18 @@ export const Button = (
         type = 'button',
         text = 'default',
         buttonIconProps,
-        className = ''
+        className = '',
+        ...props
     }: ButtonProps
 ) => {
-    const iconSize = buttonIconProps?.size ?? "small";
+    const iconSize = buttonIconProps?.size ?? "xs";
     const directionClass = buttonIconProps?.iconPosition === 'left' ? 'flex-row-reverse' : 'flex-row';
     return (
-        <button type={type} className={`cursor-pointer flex items-center ${directionClass} ${className}`}>
+        <button type={type} className={`cursor-pointer flex items-center ${directionClass} ${className}`} {...props}>
             <div>{text}</div>
             {buttonIconProps &&
                 <div className={`${SIZE_CLASSES[iconSize]}`}>
-                    <Icon name={buttonIconProps.iconName} />
+                    <Icon name={buttonIconProps.iconName}/>
                 </div>
             }
         </button>

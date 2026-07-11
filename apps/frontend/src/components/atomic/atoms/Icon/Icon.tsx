@@ -14,10 +14,9 @@ export const Icon = (
 ) => {
     const SvgComponent: SVGComponent = svgs[name];
     return (
-        <div className={`w-full h-full ${className}`}>
+        <div className={`w-full h-full`}>
             {SvgComponent && <SvgComponent
-                className="w-full h-full"
-                fill="currentColor"
+                className={`w-full h-full ${className}`}
             />}
         </div>
     );

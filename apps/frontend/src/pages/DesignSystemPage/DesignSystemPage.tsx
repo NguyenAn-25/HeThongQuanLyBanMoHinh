@@ -1,5 +1,6 @@
-import { Image, Icon, Button, type ButtonIconProps } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1 } from '@/components/atomic/molecules'
+import { Image, Icon, Button, type ButtonIconProps, TextBox } from '@/components/atomic/atoms';
+import { ButtonTextList, type ButtonSelectionL1, SearchBar } from '@/components/atomic/molecules'
+import { Header } from '@/components/atomic/organisms'
 import React from 'react';
 
 
@@ -43,7 +44,7 @@ export function DesignSystemPage() {
     ]
     return (
         <div className="min-h-screen p-8">
-            <div className="max-w-5xl mx-auto space-y-8">
+            <div className="w-full sm:w-130 md:w-176 lg:w-240 xl:w-280 2xl:w-336 mx-auto space-y-8">
                 <div>
                     <h1 className="text-2xl font-bold text-text-main">Design System Sandbox</h1>
                     <p className="text-sm text-text-muted">Khu vực kiểm thử giao diện các component</p>
@@ -77,11 +78,10 @@ export function DesignSystemPage() {
                         </div>
                     </ComponentBox>
 
-                    <ComponentBox title="Button Text List">
+                    <ComponentBox title="TextBox Component">
                         <div>
-                            <ButtonTextList
-                                text='Mô hình'
-                                selections={buttonSelections}
+                            <TextBox
+                                variant={'normal'}
                             />
                         </div>
                     </ComponentBox>
@@ -90,9 +90,20 @@ export function DesignSystemPage() {
                 {/* MOLECULES */}
                 <div className="space-y-4">
                     <h2 className="text-lg font-bold text-text-main border-b pb-1">2. Molecules</h2>
-
-                    <ComponentBox title="Chưa có component">
-                        <div></div>
+                    <ComponentBox title="Button Text List">
+                        <div>
+                            <ButtonTextList
+                                text='Mô hình'
+                                selections={buttonSelections}
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Search Bar">
+                        <div>
+                            <SearchBar
+                                variant={'borderless'}
+                            />
+                        </div>
                     </ComponentBox>
                 </div>
 
@@ -100,8 +111,10 @@ export function DesignSystemPage() {
                 <div className="space-y-4">
                     <h2 className="text-lg font-bold text-text-main border-b pb-1">3. Organisms</h2>
 
-                    <ComponentBox title="Chưa có component">
-                        <div></div>
+                    <ComponentBox title="Header">
+                        <div className='w-full'>
+                            <Header></Header>
+                        </div>
                     </ComponentBox>
                 </div>
 

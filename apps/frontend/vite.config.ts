@@ -8,7 +8,16 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    svgr()
+    svgr({
+      svgrOptions: {
+        // Cấu hình thay đổi màu đen, foreground thành màu text để đổi màu svg 
+        replaceAttrValues: {
+          '#000': 'currentColor',
+          '#000000': 'currentColor',
+          '#020618': 'currentColor' 
+        },
+      },
+    })
   ],
   resolve: {
     alias: {

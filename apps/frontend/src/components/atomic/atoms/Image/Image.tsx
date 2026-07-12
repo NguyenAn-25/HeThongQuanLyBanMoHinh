@@ -1,5 +1,7 @@
 import type React from "react";
 import { useEffect, useState } from "react";
+import { cld } from "@/services/external/Cloudinary/Cloudinary"
+import { AdvancedImage } from "@cloudinary/react";
 
 // kiểu tỷ lệ khung hình thông dụng
 const ASPECT_RATIOS = {
@@ -16,6 +18,7 @@ const OBJECT_FITS = {
 }
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+    publicId?: string;
     fallbackSrc?: string;
     aspect?: keyof typeof ASPECT_RATIOS;
     objectFit?: keyof typeof OBJECT_FITS;
@@ -23,6 +26,7 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 
 export const Image = (
     {
+        publicId,
         src,
         alt = 'Image',
         fallbackSrc = '/img/Default.png', // cài đặt sau
@@ -50,14 +54,24 @@ export const Image = (
 
     return (
         <div className={`w-full h-full overflow-hidden ${ASPECT_RATIOS[aspect]}`}>
-            <img
-                src={imgSrc}
-                alt={alt}
-                onError={handleError}
-                className={`w-full h-full transition-all duration-300 ${OBJECT_FITS[objectFit]} ${className}`}
-                loading={loading}
-                {...props}
-            />
+            {
+                publicId ?
+                    <AdvancedImage
+                        cldImg={cld.image(publicId)}
+                        alt={alt}
+                        className={`w-full h-full transition-all duration-300 ${OBJECT_FITS[objectFit]} ${className}`}
+                        {...props}
+                    /> :
+                    <img
+                        src={imgSrc}
+                        alt={alt}
+                        onError={handleError}
+                        className={`w-full h-full transition-all duration-300 ${OBJECT_FITS[objectFit]} ${className}`}
+                        loading={loading}
+                        {...props}
+                    />
+            }
         </div>
+
     );
 }

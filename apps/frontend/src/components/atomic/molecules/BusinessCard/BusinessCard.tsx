@@ -1,6 +1,5 @@
 import { Business } from '@/utils/constants'
 import { Icon, Image } from '@/components/atomic/atoms'
-import BusinessMark from '@/assets/png/BusinessMark.png';
 import React from 'react';
 
 interface BusinessCardProps {
@@ -34,7 +33,7 @@ export function BusinessCard({ className }: BusinessCardProps) {
             </div>
             <div className='w-58'>
                 <Image
-                    src={BusinessMark}
+                    publicId={"BusinessMark_lhtlof"}
                 />
             </div>
         </div>

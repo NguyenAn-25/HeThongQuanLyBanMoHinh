@@ -1,10 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority"
-import clsx, { type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/utils/cn"
 
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
 const textBoxVariants = cva(
     "px-2 py-1 rounded focus:outline-none focus:border-primary w-full bg-card-bg",
     {

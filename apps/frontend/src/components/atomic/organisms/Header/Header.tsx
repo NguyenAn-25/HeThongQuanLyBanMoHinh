@@ -1,4 +1,4 @@
-import { Button, type ButtonIconProps } from '@/components/atomic/atoms';
+import { Button } from '@/components/atomic/atoms';
 import { STORE_NAME } from '@/utils/constants';
 import { SearchBar, ButtonTextList, type ButtonSelectionL1 } from '@/components/atomic/molecules';
 import { HOTLINE } from '@/utils/constants'
@@ -41,33 +41,14 @@ const Menu: MenuItem[] = [
 ]
 
 export function Header() {
-    const logoIconProps: ButtonIconProps = {
-        iconName: 'MainLogo',
-        iconPosition: 'left',
-        size: '2xl'
-    }
-    const hotlineIconProps: ButtonIconProps = {
-        iconName: 'Phone',
-        iconPosition: 'left',
-        size: 'md',
-    }
-    const userIconProps: ButtonIconProps = {
-        iconName: 'User',
-        iconPosition: 'left',
-        size: 'sm',
-    }
-    const cartIconProps: ButtonIconProps = {
-        iconName: 'Phone',
-        iconPosition: 'left',
-        size: 'sm',
-    }
     return (
-        <div className="w-full bg-primary">
-            <div className='w-full sm:w-130 md:w-176 lg:w-240 xl:w-280 2xl:w-336 flex gap-4 lg:grid lg:grid-cols-12 lg:gap-8 items-center mx-auto pt-2'>
+        <div className="w-full bg-primary fixed lg:static">
+            <div className='w-full sm:w-130 md:w-176 lg:w-240 xl:w-280 2xl:w-336 flex gap-4 lg:grid lg:grid-cols-12 lg:gap-8 lg:pt-2 items-center mx-auto px-2'>
                 {/* Logo */}
                 <Button
                     text={STORE_NAME}
-                    buttonIconProps={logoIconProps}
+                    iconName='MainLogo'
+                    iconSize='2xl'
                     className='text-nowrap text-xs lg:text-lg xl:text-xl 2xl:text-2xl w-28 lg:w-full font-bold col-span-2'
                 />
                 <div className="flex flex-col w-full col-span-10 gap-4">
@@ -77,28 +58,29 @@ export function Header() {
                             variant={'borderless'}
                         />
                         {/* Util */}
-                        <div>
-                            <Button
-                                text={`Hotline: \n ${HOTLINE}`}
-                                buttonIconProps={hotlineIconProps}
-                                className='text-left gap-2 hover:text-secondary'
-                            />
-                        </div>
-                        <div className='flex gap-2'>
+                        <Button
+                            text={`Hotline: \n ${HOTLINE}`}
+                            iconName='Phone'
+                            iconSize='md'
+                            className='hidden lg:flex text-left gap-2 hover:text-secondary'
+                        />
+                        <div className='hidden lg:flex gap-2'>
                             <Button
                                 text=''
-                                buttonIconProps={userIconProps}
+                                iconName='User'
+                                iconSize='sm'
                                 className='hover:text-secondary'
                             />
                             <Button
                                 text=''
-                                buttonIconProps={cartIconProps}
+                                iconName='Cart'
+                                iconSize='sm'
                                 className='hover:text-secondary'
                             />
                         </div>
                     </div>
                     {/* Menu */}
-                    <div className='flex gap-4'>
+                    <div className='hidden lg:flex gap-4'>
                         {Menu.map((item, index) => (
                             item.selections ?
                                 <ButtonTextList

@@ -1,4 +1,4 @@
-import { Button, type ButtonIconProps } from "@/components/atomic/atoms";
+import { Button } from "@/components/atomic/atoms";
 
 export interface ButtonSelectionL2 {
     text: string,

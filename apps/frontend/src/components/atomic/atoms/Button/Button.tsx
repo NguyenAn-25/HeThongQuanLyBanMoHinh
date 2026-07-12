@@ -1,13 +1,8 @@
 import { Icon } from "@/components/atomic/atoms"
 import { cva, type VariantProps } from "class-variance-authority";
-import type { ClassValue } from "clsx";
-import clsx from "clsx";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/utils/cn"
 
 //thiết kế variant cho size + vị trí của icon
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
 const buttonVariants = cva(
     "cursor-pointer flex items-center",
     {

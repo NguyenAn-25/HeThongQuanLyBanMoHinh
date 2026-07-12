@@ -1,13 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import type { ClassValue } from "clsx";
-import clsx from "clsx";
-import { twMerge } from "tailwind-merge";
 
 import { TextBox, Icon } from "@/components/atomic/atoms";
+import { cn } from "@/utils/cn"
 
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
 const searchBarVariants = cva(
     "flex w-full focus-within:border-primary bg-card-bg rounded px-2 items-center",
     {

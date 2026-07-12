@@ -1,18 +1,31 @@
 import { Icon } from "@/components/atomic/atoms"
+import { cva, type VariantProps } from "class-variance-authority";
+import type { ClassValue } from "clsx";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
-export interface ButtonIconProps {
-    iconPosition: "left" | "right",
-    iconName: string,
-    size?: keyof typeof SIZE_CLASSES,
+//thiết kế variant cho size + vị trí của icon
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
 }
+const buttonVariants = cva(
+    "cursor-pointer flex items-center",
+    {
+        variants: {
+            iconPosition: {
+                left: "flex-row",
+                right: "flex-row-reverse",
+                top: "flex-col",
+                bottom: "flex-col-reverse"
+            }
+        },
+        defaultVariants: {
+            iconPosition: "left"
+        }
+    }
+);
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    text?: string,
-    className?: string,
-    buttonIconProps?: ButtonIconProps,
-}
-
-const SIZE_CLASSES = {
+const iconSizeVariants = {
     xs: 'w-5',
     sm: 'w-7',
     md: 'w-10',
@@ -22,25 +35,32 @@ const SIZE_CLASSES = {
     '3xl': 'w-30',
 };
 
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+    text?: string,
+    className?: string,
+    iconName?: string,
+    iconSize?: keyof typeof iconSizeVariants;
+}
+
 export const Button = (
     {
         type = 'button',
         text = 'default',
-        buttonIconProps,
+        iconName,
+        iconPosition,
+        iconSize = 'xs',
         className = '',
         ...props
     }: ButtonProps
 ) => {
-    const iconSize = buttonIconProps?.size ?? "xs";
-    const directionClass = buttonIconProps?.iconPosition === 'left' ? 'flex-row-reverse' : 'flex-row';
     return (
-        <button type={type} className={`cursor-pointer flex items-center ${directionClass} ${className}`} {...props}>
-            <div>{text}</div>
-            {buttonIconProps &&
-                <div className={`${SIZE_CLASSES[iconSize]}`}>
-                    <Icon name={buttonIconProps.iconName}/>
+        <button type={type} className={cn(buttonVariants({ iconPosition }), className)} {...props}>
+            {iconName &&
+                <div className={iconSizeVariants[iconSize]}>
+                    <Icon name={iconName} />
                 </div>
             }
+            <div>{text}</div>
         </button>
     )
 }

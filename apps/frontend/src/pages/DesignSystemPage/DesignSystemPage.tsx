@@ -18,11 +18,6 @@ function ComponentBox({ title, children }: { title: string; children: React.Reac
 }
 
 export function DesignSystemPage() {
-    const buttonIconProps: ButtonIconProps = {
-        iconName: 'DropDown',
-        iconPosition: 'right',
-    }
-
     const buttonSelections: ButtonSelectionL1[] = [
         {
             text: "Mô hình PVC",
@@ -73,7 +68,8 @@ export function DesignSystemPage() {
                             <Button
                                 text="button"
                                 className='px-2 font-medium hover:text-secondary'
-                                buttonIconProps={buttonIconProps}
+                                iconName='DropDown'
+                                iconPosition={'right'}
                             />
                         </div>
                     </ComponentBox>

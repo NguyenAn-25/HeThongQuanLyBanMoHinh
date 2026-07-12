@@ -1,4 +1,4 @@
-import { Header, MenuBar } from '@/components/atomic/organisms';
+import { Footer, Header, MenuBar } from '@/components/atomic/organisms';
 import { Outlet } from 'react-router-dom';
 export function CustomerLayout() {
     return (
@@ -8,6 +8,7 @@ export function CustomerLayout() {
                 <Outlet />
             </main>
             <MenuBar className='fixed bottom-0 z-50 lg:hidden'/>
+            <Footer/>
         </div>
     )
 }

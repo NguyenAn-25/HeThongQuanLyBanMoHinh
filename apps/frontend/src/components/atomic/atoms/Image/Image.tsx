@@ -53,20 +53,20 @@ export const Image = (
     };
 
     return (
-        <div className={`w-full h-full overflow-hidden ${ASPECT_RATIOS[aspect]}`}>
+        <div className={`w-full h-full overflow-hidden ${ASPECT_RATIOS[aspect]} ${className}`}>
             {
                 publicId ?
                     <AdvancedImage
                         cldImg={cld.image(publicId)}
                         alt={alt}
-                        className={`w-full h-full transition-all duration-300 ${OBJECT_FITS[objectFit]} ${className}`}
+                        className={`w-full h-full transition-all duration-300 ${OBJECT_FITS[objectFit]}`}
                         {...props}
                     /> :
                     <img
                         src={imgSrc}
                         alt={alt}
                         onError={handleError}
-                        className={`w-full h-full transition-all duration-300 ${OBJECT_FITS[objectFit]} ${className}`}
+                        className={`w-full h-full transition-all duration-300 ${OBJECT_FITS[objectFit]}`}
                         loading={loading}
                         {...props}
                     />

@@ -27,7 +27,7 @@ const iconSizeVariants = {
     lg: 'w-12',
     xl: 'w-15',
     '2xl': 'w-24',
-    '3xl': 'w-30',
+    '3xl': 'w-32',
 };
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {

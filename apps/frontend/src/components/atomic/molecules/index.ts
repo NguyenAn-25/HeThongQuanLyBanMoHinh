@@ -3,4 +3,7 @@ export { SearchBar } from './SearchBar/SearchBar'
 export { FooterItem } from './FooterItem/FooterItem';
 export { InfoCard } from './InfoCard/InfoCard';
 export { NetworkCard } from './NetworkCard/NetworkCard';
-export { BusinessCard } from './BusinessCard/BusinessCard'
+export { BusinessCard } from './BusinessCard/BusinessCard';
+export { CardFrame } from "./CardFrame/CardFrame";
+export { CategoryContainer } from "./CategoryContainer/CategoryContainer";
+export { ImageButton } from "./ImageButton/ImageButton";

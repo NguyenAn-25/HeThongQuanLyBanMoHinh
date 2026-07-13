@@ -62,7 +62,7 @@ export function Header() {
                             text={`Hotline: \n ${HOTLINE}`}
                             iconName='Phone'
                             iconSize='md'
-                            className='hidden lg:flex text-left gap-2 hover:text-secondary'
+                            className='hidden lg:flex text-left gap-2 hover:text-secondary font-medium'
                         />
                         <div className='hidden lg:flex gap-2'>
                             <Button
@@ -80,7 +80,7 @@ export function Header() {
                         </div>
                     </div>
                     {/* Menu */}
-                    <div className='hidden lg:flex gap-4'>
+                    <div className='hidden lg:flex gap-4 font-medium'>
                         {Menu.map((item, index) => (
                             item.selections ?
                                 <ButtonTextList

@@ -1,12 +1,13 @@
-import { Image, Icon, Button, type ButtonIconProps, TextBox } from '@/components/atomic/atoms';
+import { Image, Icon, Button, TextBox } from '@/components/atomic/atoms';
 import { ButtonTextList, type ButtonSelectionL1, SearchBar } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
+import { CategoryCard } from '@/components/atomic/organisms/CategoryCard/CategoryCard';
 import React from 'react';
 
 
 function ComponentBox({ title, children }: { title: string; children: React.ReactNode }) {
     return (
-        <div className="p-6 bg-white rounded-lg border border-border-main">
+        <div className="p-6 bg-app-bg rounded-lg border border-black">
             <h3 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
                 {title}
             </h3>
@@ -110,6 +111,11 @@ export function DesignSystemPage() {
                     <ComponentBox title="Header">
                         <div className='w-full'>
                             <Header></Header>
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Header">
+                        <div className='w-full'>
+                            <CategoryCard/>
                         </div>
                     </ComponentBox>
                 </div>

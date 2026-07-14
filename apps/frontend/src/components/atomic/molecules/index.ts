@@ -7,3 +7,5 @@ export { BusinessCard } from './BusinessCard/BusinessCard';
 export { CardFrame } from "./CardFrame/CardFrame";
 export { CategoryContainer } from "./CategoryContainer/CategoryContainer";
 export { ImageButton } from "./ImageButton/ImageButton";
+export { QuickCard } from "./QuickCard/QuickCard";
+

@@ -1,7 +1,8 @@
 import { Image } from "@/components/atomic/atoms"
-import { CategoryCard } from "@/components/atomic/organisms"
+import { CategoryCard, QuickCardContainer } from "@/components/atomic/organisms"
 
 const bannerId = "banner_xzynir"
+const quickCardIds = ["quick_card_instock_nz2wta", "quick_card_hot_product_pwtkl8", "quick_card_pre_order_dtdzb0"]
 
 export function HomePage() {
     return (
@@ -12,6 +13,10 @@ export function HomePage() {
                 />
             </div>
             <CategoryCard />
+            <QuickCardContainer
+                imgIds={quickCardIds}
+                numberOfCard="3"
+            />
         </div>
     )
 }

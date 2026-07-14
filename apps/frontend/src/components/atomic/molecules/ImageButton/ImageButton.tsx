@@ -13,9 +13,10 @@ const imgSizeVariants = {
 interface ImageButtonProps {
     publicId: string,
     text: string,
-    imgSize?: keyof typeof imgSizeVariants
-    className?: string
-    imgClassName?: string;
+    imgSize?: keyof typeof imgSizeVariants,
+    className?: string,
+    imgClassName?: string,
+    textClassName?: string
 }
 
 export function ImageButton({
@@ -23,17 +24,18 @@ export function ImageButton({
     text,
     imgSize = "xs",
     className,
-    imgClassName
+    imgClassName,
+    textClassName
 }: ImageButtonProps) {
     return (
-        <div className={`flex flex-col gap-1 hover:text-primary items-center ${className}`}>
+        <div className={`flex flex-col gap-1 hover:text-primary items-center cursor-pointer ${className}`}>
             <div className={imgSizeVariants[imgSize]}>
                 <Image
                     publicId={publicId}
                     className={imgClassName}
                 />
             </div>
-            <div className=''>{text}</div>
+            <div className={textClassName}>{text}</div>
         </div>
     )
 }

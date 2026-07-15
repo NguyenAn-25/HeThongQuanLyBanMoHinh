@@ -62,20 +62,20 @@ export function Header() {
                             text={`Hotline: \n ${HOTLINE}`}
                             iconName='Phone'
                             iconSize='md'
-                            className='hidden lg:flex text-left gap-2 hover:text-secondary font-medium'
+                            className='hidden lg:flex text-left gap-2 hover:text-secondary font-medium text-white'
                         />
                         <div className='hidden lg:flex gap-2'>
                             <Button
                                 text=''
                                 iconName='User'
                                 iconSize='sm'
-                                className='hover:text-secondary'
+                                className='hover:text-secondary text-white'
                             />
                             <Button
                                 text=''
                                 iconName='Cart'
                                 iconSize='sm'
-                                className='hover:text-secondary'
+                                className='hover:text-secondary text-white'
                             />
                         </div>
                     </div>
@@ -87,13 +87,13 @@ export function Header() {
                                     key={index}
                                     text={item.text}
                                     selections={item.selections}
-                                    className='px-2 py-3'
+                                    className='px-2 py-3 text-white'
                                 />
                                 :
                                 <Button
                                     key={index}
                                     text={item.text}
-                                    className='px-2 py-3 hover:text-secondary'
+                                    className='px-2 py-3 hover:text-secondary text-white'
                                 />
                         ))}
                     </div>

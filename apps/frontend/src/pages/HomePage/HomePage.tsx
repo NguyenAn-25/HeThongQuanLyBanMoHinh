@@ -1,5 +1,6 @@
 import { Image } from "@/components/atomic/atoms"
-import { CategoriesCard, CategoryGroupsCard, ProductsCard, ProductsSlideCard, QuickCardContainer } from "@/components/atomic/organisms"
+import { VideosSlideContainer } from "@/components/atomic/molecules"
+import { CategoriesCard, CategoryGroupsCard, ProductsCard, ProductsSlideCard, QuickCardContainer, VideosCard } from "@/components/atomic/organisms"
 
 const bannerId = "banner_xzynir"
 const quickCardIds = ["quick_card_instock_nz2wta", "quick_card_hot_product_pwtkl8", "quick_card_pre_order_dtdzb0"]
@@ -180,6 +181,25 @@ const preorderProducts = [
     }
 ]
 
+const videos = [
+    {
+        publicId: "video_jujutsu_by13m7",
+        text: "MÔ HÌNH GOJO X SUKUNA LUMINASTA (SEGA) - M FIGURE"
+    },
+        {
+        publicId: "video_nier_automata_iz3tif",
+        text: "MÔ HÌNH 2B - ICHIBAN KUJI NIER:AUTOMATA VER1.1A - A PRIZE - M FIGURE"
+    },
+        {
+        publicId: "video_hatsune_miku_gvvhl9",
+        text: "MÔ HÌNH HATSUNE MIKU - COREFUL - LOLITA VER. (TAITO) - M FIGURE"
+    },
+            {
+        publicId: "video_chloe_von_einzbern_cunswi",
+        text: "UNBOXING MÔ HÌNH CHLOE VON EINZBERN - KLANGFEST VER. - M FIGURE"
+    },
+]
+
 export function HomePage() {
     return (
         <div className="flex flex-col py-4 gap-4">
@@ -209,6 +229,10 @@ export function HomePage() {
             <ProductsCard
                 title="MÔ HÌNH ĐẶT TRƯỚC"
                 products={preorderProducts}
+            />
+            <VideosCard
+                title="VIDEO - REVIEW SẢN PHẨM"
+                videos={videos}
             />
         </div>
     )

@@ -13,5 +13,7 @@ export { ProductsSlideContainer, type ProductsSlideContainerProps } from "./Prod
 export { CategoryGroup } from "./CategoryGroup/CategoryGroup";
 export { CategoryGroupsContainer } from "./CategoryGroupsContainer/CategoryGroupsContainer";
 export { ProductsContainer, type ProductsContainerProps } from "./ProductsContainer/PropductsContainer";
+export { VideoCard, type VideoCardProps } from "./VideoCard/VideoCard";
+export { VideosSlideContainer, type VideosSlideContainerProps } from "./VideosSlideContainer/VideosSlideContainer";
 
 

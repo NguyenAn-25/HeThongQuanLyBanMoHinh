@@ -1,16 +1,15 @@
 // hai loại: 1 loại trượt, 1 loại đựng
 
 import { useCallback, useEffect, useState } from "react"
-import { ProductCard, type ProductCardProps } from "../ProductCard/ProductCard"
+import { VideoCard, type VideoCardProps } from "../VideoCard/VideoCard"
 import useEmblaCarousel from "embla-carousel-react";
 import { ScrollButton } from "../../atoms";
 
-export interface ProductsSlideContainerProps {
-    products: ProductCardProps[]
+export interface VideosSlideContainerProps {
+    videos: VideoCardProps[]
 }
 
-
-export function ProductsSlideContainer({ products }: ProductsSlideContainerProps) {
+export function VideosSlideContainer({ videos }: VideosSlideContainerProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         align: "start",
         containScroll: "trimSnaps",
@@ -59,15 +58,15 @@ export function ProductsSlideContainer({ products }: ProductsSlideContainerProps
 
             <div ref={emblaRef} className="overflow-hidden w-full">
                 <div className={`flex`}>
-                    {products.map((product, index) => (
+                    {videos.map((video, index) => (
                         <div
-                            className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-2"
+                            className="w-full md:w-1/2 lg:w-1/3 px-2"
                         >
-                            <ProductCard
+                            <VideoCard
                                 key={index}
-                                {...product}
+                                {...video}
                             >
-                            </ProductCard>
+                            </VideoCard>
                         </div>
                     ))}
                 </div>

@@ -66,7 +66,7 @@ export function ProductCard({
             <div className='flex gap-1 items-baseline'>
                 <Money
                     price={mainPrice}
-                    className='text-lg text-secondary font-semibold'
+                    className='text-sm text-secondary font-bold'
                 />
                 {salePrice &&
                     <Money

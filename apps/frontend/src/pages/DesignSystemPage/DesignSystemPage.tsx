@@ -1,5 +1,5 @@
 import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup } from '@/components/atomic/molecules'
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
 import React from 'react';
@@ -160,6 +160,14 @@ export function DesignSystemPage() {
                                 imgIds={categoryGroupIds}
                                 quantity={200}
                                 title='Game Prize Figure'
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Category Group Container">
+                        <div className='w-64'>
+                            <VideoCard
+                                publicId='video_jujutsu_by13m7'
+                                text='MÔ HÌNH GOJO X SUKUNA LUMINASTA (SEGA) - M FIGURE'
                             />
                         </div>
                     </ComponentBox>

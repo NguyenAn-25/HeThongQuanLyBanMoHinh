@@ -1,5 +1,5 @@
 import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard } from '@/components/atomic/molecules'
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
 import React from 'react';
@@ -42,6 +42,9 @@ export function DesignSystemPage() {
     const productId = "product_hatsune_miku_phong_cach_duong_pho_eatwzu";
     const price = 3000000;
     const salePrice = 2000000;
+
+    const categoryGroupIds = ["game_prize_figure_1_dadrzy", "game_prize_figure_1_dadrzy", "game_prize_figure_1_dadrzy"];
+
     return (
         <div className="min-h-screen p-8">
             <div className="w-full sm:w-130 md:w-176 lg:w-240 xl:w-280 2xl:w-336 mx-auto space-y-8">
@@ -148,6 +151,15 @@ export function DesignSystemPage() {
                                 price={price}
                                 salePrice={salePrice}
                                 productType='preorder'
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Category Group Container">
+                        <div className='w-64'>
+                            <CategoryGroup
+                                imgIds={categoryGroupIds}
+                                quantity={200}
+                                title='Game Prize Figure'
                             />
                         </div>
                     </ComponentBox>

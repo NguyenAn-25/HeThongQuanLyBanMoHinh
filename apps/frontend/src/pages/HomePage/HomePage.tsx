@@ -1,5 +1,5 @@
 import { Image } from "@/components/atomic/atoms"
-import { CategoriesCard, ProductsCard, QuickCardContainer } from "@/components/atomic/organisms"
+import { CategoriesCard, CategoryGroupsCard, ProductsCard, QuickCardContainer } from "@/components/atomic/organisms"
 
 const bannerId = "banner_xzynir"
 const quickCardIds = ["quick_card_instock_nz2wta", "quick_card_hot_product_pwtkl8", "quick_card_pre_order_dtdzb0"]
@@ -65,6 +65,7 @@ export function HomePage() {
                 title={"MÔ HÌNH GIẢM GIÁ"}
                 products={products}
             />
+            <CategoryGroupsCard/>
         </div>
     )
 }

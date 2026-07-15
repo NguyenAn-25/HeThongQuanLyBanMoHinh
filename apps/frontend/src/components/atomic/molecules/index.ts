@@ -10,5 +10,7 @@ export { ImageButton } from "./ImageButton/ImageButton";
 export { QuickCard } from "./QuickCard/QuickCard";
 export { ProductCard, type ProductCardProps } from "./ProductCard/ProductCard";
 export { ProductsSlideContainer, type ProductsSlideContainerProps } from "./ProductsSlideContainer/ProductsSlideContainer";
+export { CategoryGroup } from "./CategoryGroup/CategoryGroup";
+export { CategoryGroupsContainer } from "./CategoryGroupsContainer/CategoryGroupsContainer";
 
 

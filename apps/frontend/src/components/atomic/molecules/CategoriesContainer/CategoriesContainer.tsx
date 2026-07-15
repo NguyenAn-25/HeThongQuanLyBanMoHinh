@@ -5,16 +5,17 @@ interface CategryProps {
     publicId: string
 }
 
-interface CategoryContainerProps {
+interface CategoriesContainerProps {
     listCategories: CategryProps[]
 }
 
-export function CategoryContainer({ listCategories }: CategoryContainerProps) {
+export function CategoriesContainer({ listCategories }: CategoriesContainerProps) {
     return (
         <div className="w-full flex gap-4 overflow-x-auto sm:grid sm:grid-cols-12 sm:justify-items-center sm:gap-y-8 py-4">
             {
                 listCategories.map((category, index) => (
                     <ImageButton
+                        key={index}
                         publicId={category.publicId}
                         text={category.text}
                         imgSize="xl"

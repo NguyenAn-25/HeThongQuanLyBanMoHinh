@@ -1,7 +1,7 @@
-import { Image, Icon, Button, TextBox } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar } from '@/components/atomic/molecules'
+import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag } from '@/components/atomic/atoms';
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
-import { CategoryCard } from '@/components/atomic/organisms/CategoryCard/CategoryCard';
+import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
 import React from 'react';
 
 
@@ -38,6 +38,10 @@ export function DesignSystemPage() {
         },
         { text: "Sản phẩm nổi bật" }
     ]
+
+    const productId = "product_hatsune_miku_phong_cach_duong_pho_eatwzu";
+    const price = 3000000;
+    const salePrice = 2000000;
     return (
         <div className="min-h-screen p-8">
             <div className="w-full sm:w-130 md:w-176 lg:w-240 xl:w-280 2xl:w-336 mx-auto space-y-8">
@@ -82,6 +86,32 @@ export function DesignSystemPage() {
                             />
                         </div>
                     </ComponentBox>
+                    <ComponentBox title="ScrollButton Component">
+                        <div className='w-20'>
+                            <ScrollButton />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Tag Component">
+                        <div>
+                            <Tag
+                                text='IN STOCK'
+                            />
+                        </div>
+                        <div>
+                            <Tag
+                                text='IN STOCK'
+                                color={'secondary'}
+                                size={'medium'}
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Discount Tag Component">
+                        <div>
+                            <DiscountTag
+                                percent={20}
+                            />
+                        </div>
+                    </ComponentBox>
                 </div>
 
                 {/* MOLECULES */}
@@ -102,6 +132,25 @@ export function DesignSystemPage() {
                             />
                         </div>
                     </ComponentBox>
+                    <ComponentBox title="ProductCard">
+                        <div className='w-60'>
+                            <ProductCard
+                                publicId={productId}
+                                text='Hatsune Miku Phong Cách Đường Phố'
+                                price={price}
+                                productType='instock'
+                            />
+                        </div>
+                        <div className='w-60'>
+                            <ProductCard
+                                publicId={productId}
+                                text='Hatsune Miku Phong Cách Đường Phố'
+                                price={price}
+                                salePrice={salePrice}
+                                productType='preorder'
+                            />
+                        </div>
+                    </ComponentBox>
                 </div>
 
                 {/* ORGANISMS */}
@@ -113,9 +162,9 @@ export function DesignSystemPage() {
                             <Header></Header>
                         </div>
                     </ComponentBox>
-                    <ComponentBox title="Header">
+                    <ComponentBox title="CategoryCard">
                         <div className='w-full'>
-                            <CategoryCard/>
+                            <CategoriesCard />
                         </div>
                     </ComponentBox>
                 </div>

@@ -1,4 +1,8 @@
-export {Image} from "./Image/Image"
-export {Icon} from "./Icon/Icon"
-export {Button, type ButtonIconProps} from "./Button/Button"
-export {TextBox} from './TextBox/TextBox';
+export { Image } from "./Image/Image";
+export { Icon } from "./Icon/Icon";
+export { Button } from "./Button/Button";
+export { TextBox } from './TextBox/TextBox';
+export { ScrollButton } from './ScrollButton/ScrollButton';
+export { Tag } from './Tag/Tag';
+export { Money } from './Money/Money';
+export { DiscountTag } from './DiscountTag/DiscountTag';

@@ -5,7 +5,10 @@ export { InfoCard } from './InfoCard/InfoCard';
 export { NetworkCard } from './NetworkCard/NetworkCard';
 export { BusinessCard } from './BusinessCard/BusinessCard';
 export { CardFrame } from "./CardFrame/CardFrame";
-export { CategoryContainer } from "./CategoryContainer/CategoryContainer";
+export { CategoriesContainer } from "./CategoriesContainer/CategoriesContainer";
 export { ImageButton } from "./ImageButton/ImageButton";
 export { QuickCard } from "./QuickCard/QuickCard";
+export { ProductCard, type ProductCardProps } from "./ProductCard/ProductCard";
+export { ProductsSlideContainer, type ProductsSlideContainerProps } from "./ProductsSlideContainer/ProductsSlideContainer";
+
 

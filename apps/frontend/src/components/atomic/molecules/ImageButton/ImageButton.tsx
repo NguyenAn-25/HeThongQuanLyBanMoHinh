@@ -35,7 +35,12 @@ export function ImageButton({
                     className={imgClassName}
                 />
             </div>
-            <div className={textClassName}>{text}</div>
+            <div
+                className={textClassName}
+                title={text}
+            >
+                {text}
+            </div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { CardFrame, CategoryContainer } from "@/components/atomic/molecules";
+import { CardFrame, CategoriesContainer } from "@/components/atomic/molecules";
 
 const mockImgIds = [
     {
@@ -51,10 +51,10 @@ const mockImgIds = [
     },
 ];
 
-export function CategoryCard() {
+export function CategoriesCard() {
     return (
         <CardFrame title="SERIES NỔI BẬT">
-            <CategoryContainer
+            <CategoriesContainer
                 listCategories={mockImgIds}
             />
         </CardFrame>

@@ -12,5 +12,6 @@ export { ProductCard, type ProductCardProps } from "./ProductCard/ProductCard";
 export { ProductsSlideContainer, type ProductsSlideContainerProps } from "./ProductsSlideContainer/ProductsSlideContainer";
 export { CategoryGroup } from "./CategoryGroup/CategoryGroup";
 export { CategoryGroupsContainer } from "./CategoryGroupsContainer/CategoryGroupsContainer";
+export { ProductsContainer, type ProductsContainerProps } from "./ProductsContainer/PropductsContainer";
 
 

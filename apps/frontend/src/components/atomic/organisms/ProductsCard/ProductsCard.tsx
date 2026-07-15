@@ -1,7 +1,7 @@
-import { CardFrame } from "../../molecules";
-import { ProductsSlideContainer, type ProductsSlideContainerProps } from '../../molecules/ProductsSlideContainer/ProductsSlideContainer';
+import { CardFrame, type ProductsContainerProps } from "../../molecules";
+import { ProductsContainer } from "../../molecules"; 
 
-interface ProductsCardProps extends ProductsSlideContainerProps {
+interface ProductsCardProps extends ProductsContainerProps {
     title: string
 }
 
@@ -13,7 +13,7 @@ export function ProductsCard({
         <CardFrame
             title={title}
         >
-            <ProductsSlideContainer
+            <ProductsContainer
                 {...props}
             />
         </CardFrame>

@@ -41,6 +41,7 @@ export function ProductCard({
                 <div className="relative w-full rounded-lg border-2 border-gray-light overflow-hidden transition-transform hover:scale-105 duration-600">
                     <Image
                         publicId={publicId}
+                        aspect='square'
                     />
                     <Tag
                         text={productTypeVariants[productType].text}

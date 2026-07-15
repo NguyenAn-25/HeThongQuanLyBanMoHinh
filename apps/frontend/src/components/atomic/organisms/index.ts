@@ -6,4 +6,5 @@ export { QuickCardContainer } from "./QuickCardContainer/QuickCardContainer"
 export { ProductsSlideCard } from "./ProductsSlideCard/ProductsSlideCard"
 export { CategoryGroupsCard } from "./CategoryGroupsCard/CategoryGroupsCard"
 export { ProductsCard } from "./ProductsCard/ProductsCard"
+export { VideosCard } from "./VideosCard/VideosCard"
 

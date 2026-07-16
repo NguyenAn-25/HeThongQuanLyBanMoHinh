@@ -42,7 +42,7 @@ const Menu: MenuItem[] = [
 
 export function Header() {
     return (
-        <div className="w-full bg-primary fixed lg:static z-10">
+        <div className="w-full bg-primary fixed lg:static z-50">
             <div className='w-full sm:w-130 md:w-176 lg:w-240 xl:w-280 2xl:w-336 flex gap-4 lg:grid lg:grid-cols-12 lg:gap-8 lg:pt-2 items-center mx-auto px-2'>
                 {/* Logo */}
                 <Button

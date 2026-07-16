@@ -1,6 +1,7 @@
 import { Image } from "@/components/atomic/atoms"
 import { VideosSlideContainer } from "@/components/atomic/molecules"
 import { CategoriesCard, CategoryGroupsCard, ProductsCard, ProductsSlideCard, QuickCardContainer, VideosCard } from "@/components/atomic/organisms"
+import { BrandsCard } from "@/components/atomic/organisms/BrandsCard/BrandsCard"
 
 const bannerId = "banner_xzynir"
 const quickCardIds = ["quick_card_instock_nz2wta", "quick_card_hot_product_pwtkl8", "quick_card_pre_order_dtdzb0"]
@@ -200,6 +201,8 @@ const videos = [
     },
 ]
 
+const brands = ["brand_bandai_k5at3d", "brand_taito_urgpai", "brand_furyu_q7em1r", "brand_sega_zszhwr"]
+
 export function HomePage() {
     return (
         <div className="flex flex-col py-4 gap-4">
@@ -233,6 +236,10 @@ export function HomePage() {
             <VideosCard
                 title="VIDEO - REVIEW SẢN PHẨM"
                 videos={videos}
+            />
+            <BrandsCard
+                title="THƯƠNG HIỆU NỔI TIẾNG"
+                brands={brands}
             />
         </div>
     )

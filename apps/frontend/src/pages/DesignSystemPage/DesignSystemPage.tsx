@@ -145,7 +145,7 @@ export function DesignSystemPage() {
                     <ComponentBox title="ProductCard">
                         <div className='w-60'>
                             <ProductCard
-                                id={1}
+                                productId={1}
                                 publicId={productId}
                                 text='Hatsune Miku Phong Cách Đường Phố'
                                 price={price}
@@ -154,7 +154,7 @@ export function DesignSystemPage() {
                         </div>
                         <div className='w-60'>
                             <ProductCard
-                                id={1}
+                                productId={1}
                                 publicId={productId}
                                 text='Hatsune Miku Phong Cách Đường Phố'
                                 price={price}

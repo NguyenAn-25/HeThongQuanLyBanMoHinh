@@ -17,7 +17,7 @@ const OBJECT_FITS = {
     fill: 'object-fill'
 }
 
-interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     publicId?: string;
     fallbackSrc?: string;
     aspect?: keyof typeof ASPECT_RATIOS;

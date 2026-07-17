@@ -17,5 +17,5 @@ export { VideoCard, type VideoCardProps } from "./VideoCard/VideoCard";
 export { VideosSlideContainer, type VideosSlideContainerProps } from "./VideosSlideContainer/VideosSlideContainer";
 export { BrandsContainer, type BrandsContainerProps } from "./BrandsContainer/BrandsContainer";
 export { ImageCycler } from "./ImageCycler/ImageCycler";
-
+export { Breadcrumb, type BreadcrumbItems, type BreadcrumbProps } from "./Breadcrumb/Breadcrumb";
 

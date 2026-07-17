@@ -1,8 +1,9 @@
 import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard } from '@/components/atomic/molecules'
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
-import React from 'react';
+import { useBreadcrumbStore } from '@/stores/breadcrum.store';
+import React, { useEffect } from 'react';
 
 
 function ComponentBox({ title, children }: { title: string; children: React.ReactNode }) {
@@ -44,6 +45,12 @@ export function DesignSystemPage() {
     const salePrice = 2000000;
 
     const categoryGroupIds = ["game_prize_figure_1_dadrzy", "game_prize_figure_1_dadrzy", "game_prize_figure_1_dadrzy"];
+
+    const { setBreadscrumbItems } = useBreadcrumbStore()
+    useEffect(() => {
+        setBreadscrumbItems([{ label: "Sản phẩm" }]);
+    }, [setBreadscrumbItems]);
+
 
     return (
         <div className="min-h-screen p-8">
@@ -138,6 +145,7 @@ export function DesignSystemPage() {
                     <ComponentBox title="ProductCard">
                         <div className='w-60'>
                             <ProductCard
+                                id={1}
                                 publicId={productId}
                                 text='Hatsune Miku Phong Cách Đường Phố'
                                 price={price}
@@ -146,6 +154,7 @@ export function DesignSystemPage() {
                         </div>
                         <div className='w-60'>
                             <ProductCard
+                                id={1}
                                 publicId={productId}
                                 text='Hatsune Miku Phong Cách Đường Phố'
                                 price={price}
@@ -169,6 +178,11 @@ export function DesignSystemPage() {
                                 publicId='video_jujutsu_by13m7'
                                 text='MÔ HÌNH GOJO X SUKUNA LUMINASTA (SEGA) - M FIGURE'
                             />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Category Group Container">
+                        <div className="w-full">
+                            <Breadcrumb />
                         </div>
                     </ComponentBox>
                 </div>

@@ -1,5 +1,4 @@
 import { Image } from "@/components/atomic/atoms"
-import { VideosSlideContainer } from "@/components/atomic/molecules"
 import { CategoriesCard, CategoryGroupsCard, ProductsCard, ProductsSlideCard, QuickCardContainer, VideosCard } from "@/components/atomic/organisms"
 import { BrandsCard } from "@/components/atomic/organisms/BrandsCard/BrandsCard"
 
@@ -50,7 +49,10 @@ const saleProducts = [
         text: "Hatsune Miku phong cách đường phố",
         price: 2000000
     }
-]
+].map((product, index) => ({
+    id: index + 1,
+    ...product,
+}));
 
 const instockProducts = [
     {
@@ -115,7 +117,10 @@ const instockProducts = [
         text: "Hatsune Miku Candy",
         price: 2000000
     }
-]
+].map((product, index) => ({
+    id: index + 1,
+    ...product,
+}));
 
 const preorderProducts = [
     {
@@ -180,7 +185,10 @@ const preorderProducts = [
         text: "Hatsune Miku Cat",
         price: 2000000
     }
-]
+].map((product, index) => ({
+    id: index + 1,
+    ...product,
+}));
 
 const videos = [
     {

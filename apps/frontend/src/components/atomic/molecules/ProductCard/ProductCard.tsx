@@ -3,6 +3,7 @@ import { Image } from '../../atoms/Image/Image';
 import { Tag } from '../../atoms/Tag/Tag';
 import { DiscountTag } from '../../atoms/DiscountTag/DiscountTag';
 import { CalculateDiscountPercentage } from "@/utils/calculator"
+import { Link } from 'react-router-dom';
 
 const productTypeVariants = {
     preorder: {
@@ -16,6 +17,7 @@ const productTypeVariants = {
 } as const;
 
 export interface ProductCardProps {
+    id: number,
     productType?: keyof typeof productTypeVariants,
     publicId: string,
     text: string,
@@ -25,6 +27,7 @@ export interface ProductCardProps {
 }
 
 export function ProductCard({
+    id,
     productType = "instock",
     publicId,
     text,
@@ -36,7 +39,10 @@ export function ProductCard({
 
     const mainPrice = salePrice ?? price
     return (
-        <div className={`w-full flex flex-col ${className}`}>
+        <Link
+            to={`/products/${id}`}
+            className={`w-full flex flex-col ${className}`}
+        >
             <div className="w-full bg-primary p-0.5 overflow-hidden cursor-pointer">
                 <div className="relative w-full rounded-lg border-2 border-gray-light overflow-hidden transition-transform hover:scale-105 duration-600">
                     <Image
@@ -75,6 +81,6 @@ export function ProductCard({
                         type='discount'
                     />}
             </div>
-        </div>
+        </Link>
     )
 }

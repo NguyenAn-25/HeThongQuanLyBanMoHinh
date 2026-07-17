@@ -4,7 +4,7 @@ import { useBreadcrumbStore } from "@/stores/breadcrum.store";
 import { useEffect } from "react";
 
 const product = {
-    id: 1,
+    productId: 1,
     publicId: "product_hatsune_miku_candy_nv4fer",
     text: "Hatsune Miku Candy",
     price: 2000000,

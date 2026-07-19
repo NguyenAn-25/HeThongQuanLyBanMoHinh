@@ -1,5 +1,5 @@
 import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb } from '@/components/atomic/molecules'
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
 import { useBreadcrumbStore } from '@/stores/breadcrum.store';
@@ -40,6 +40,7 @@ export function DesignSystemPage() {
         { text: "Sản phẩm nổi bật" }
     ]
 
+    const productId2 = "product_mihari_mfodt5";
     const productId = "product_hatsune_miku_phong_cach_duong_pho_eatwzu";
     const price = 3000000;
     const salePrice = 2000000;
@@ -50,6 +51,13 @@ export function DesignSystemPage() {
     useEffect(() => {
         setBreadscrumbItems([{ label: "Sản phẩm" }]);
     }, [setBreadscrumbItems]);
+    const productDetails = [
+        { id: '1', publicId: "product_mihari_mfodt5" },
+        { id: '2', publicId: "product_mihari_detail1_u5xf8i" },
+        { id: '3', publicId: "product_mihari_detail2_taidol" },
+        { id: '4', publicId: "product_mihari_detail1_u5xf8i" },
+        { id: '5', publicId: "product_mihari_detail2_taidol" },
+    ]
 
 
     return (
@@ -180,9 +188,35 @@ export function DesignSystemPage() {
                             />
                         </div>
                     </ComponentBox>
-                    <ComponentBox title="Category Group Container">
+                    <ComponentBox title="BreadCrumb">
                         <div className="w-full">
                             <Breadcrumb />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="ProductImage">
+                        <div className="w-xl">
+                            <ProductImage
+                                publicId={productId2}
+                                productType='instock'
+                                frameSize='large'
+                                aspect='square'
+                                objectFit='contain'
+                            />
+                        </div>
+                        <div className="w-32">
+                            <ProductImage
+                                publicId={productId}
+                                productType='instock'
+                                frameSize='small'
+                                objectFit='fill'
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="ProductDetailSetImages">
+                        <div className='w-120'>
+                            <ProductDetailSetImages
+                                productImages={productDetails}
+                            />
                         </div>
                     </ComponentBox>
                 </div>

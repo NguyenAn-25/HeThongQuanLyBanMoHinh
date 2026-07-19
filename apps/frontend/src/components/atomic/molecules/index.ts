@@ -18,5 +18,6 @@ export { VideosSlideContainer, type VideosSlideContainerProps } from "./VideosSl
 export { BrandsContainer, type BrandsContainerProps } from "./BrandsContainer/BrandsContainer";
 export { ImageCycler } from "./ImageCycler/ImageCycler";
 export { Breadcrumb, type BreadcrumbItems, type BreadcrumbProps } from "./Breadcrumb/Breadcrumb";
-export { ProductImage } from "./ProductImage/ProductImage";
+export { ProductImage, type ProductImageProps } from "./ProductImage/ProductImage";
+export { ProductDetailSetImages } from "./ProductDetailSetImages/ProductDetailSetImages";
 

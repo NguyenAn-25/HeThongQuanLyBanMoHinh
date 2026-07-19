@@ -34,6 +34,8 @@ export function ProductCard({
         >
             <ProductImage
                 discountPercent={discountPercent}
+                productHover="zoom"
+                aspect='square'
                 {...props}
             />
             <div

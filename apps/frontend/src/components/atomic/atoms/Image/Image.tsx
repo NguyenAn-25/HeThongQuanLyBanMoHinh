@@ -52,6 +52,10 @@ export const Image = (
         }
     };
 
+    // const myImage = publicId ? cld.image(publicId) : null;
+    // if(publicId === "prodct_mihari_detail1_u5xf8i"){console.log(myImage)}
+    // if(myImage === null && src === null){console.log(`bi null ${publicId}`)}
+
     return (
         <div className={`w-full h-full overflow-hidden ${ASPECT_RATIOS[aspect]} ${className}`}>
             {
@@ -60,6 +64,11 @@ export const Image = (
                         cldImg={cld.image(publicId)}
                         alt={alt}
                         className={`w-full h-full transition-all duration-300 ${OBJECT_FITS[objectFit]}`}
+                        onError={(e: { target: HTMLImageElement; }) => {
+                            //ép kiểu về thẻ img
+                            const target = e.target as HTMLImageElement;
+                            target.src = fallbackSrc;
+                        }}
                         {...props}
                     /> :
                     <img

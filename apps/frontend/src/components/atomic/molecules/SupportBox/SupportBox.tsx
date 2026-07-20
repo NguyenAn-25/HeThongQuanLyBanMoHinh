@@ -13,7 +13,7 @@ export function SupportBox() {
                 <div className="text-dark-yellow">
                     Hỗ trợ mua hàng
                 </div>
-                <div className="text-base-orange text-2xl font-semibold">
+                <div className="text-base-orange text-xl font-semibold">
                     {SupportInfo.phoneNum}
                 </div>
             </div>

@@ -7,10 +7,10 @@ export function CommitmentBox() {
             <div
                 className="text-lg font-medium"
             >{Commitment}</div>
-            <div className="flex flex-col gap-4">
+            <div className="grid grid-cols-2 gap-y-4 xl:flex xl:flex-col xl:gap-4">
                 {
                     CommitmentDetail.map((Commitment, index) => (
-                        <div className="flex flex-col gap-2" key={index}>
+                        <div className="col-span-1 flex flex-col gap-2" key={index}>
                             <div className="w-full border border-border-main"></div>
                             <div className="flex gap-4 items-center">
                                 <div className="w-10">

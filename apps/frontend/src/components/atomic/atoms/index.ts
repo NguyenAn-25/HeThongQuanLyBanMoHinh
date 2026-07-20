@@ -7,3 +7,4 @@ export { Tag } from './Tag/Tag';
 export { Money } from './Money/Money';
 export { DiscountTag } from './DiscountTag/DiscountTag';
 export { SelectionButton } from './SelectionButton/SelectionButton';
+export { JsonContentRenderer, type RichTextJSON, type JsonContentRendererProps } from './JsonContentRenderer/JsonContentRenderer';

@@ -61,7 +61,7 @@ export function ProductsSlideContainer({ products }: ProductsSlideContainerProps
                 <div className={`flex`}>
                     {products.map((product, index) => (
                         <div
-                            className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-2"
+                            className="shrink-0 w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-2"
                         >
                             <ProductCard
                                 key={index}

@@ -22,8 +22,7 @@ export function ProductDetailSetImages({
         const nextImage = productImages[activeIndex];
         console.log(activeIndex, nextImage)
         const currentActive = displayMainImages.find(img => img.main);
-        if (nextImage === currentActive) {
-            console.log("thumbnail đang là main")
+        if (nextImage.productId === currentActive?.productId) {
             return
         }; // nhấn thumbnail đang là main
 
@@ -45,9 +44,9 @@ export function ProductDetailSetImages({
     return (
         <div className='w-full flex flex-col gap-2'>
             <div className="w-full relative aspect-square">
-                {displayMainImages.map((image, index) => (
+                {displayMainImages.map((image) => (
                     <div
-                        key={image.id}
+                        key={image.productId}
                         className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${image.main ? 'opacity-100 z-0' : 'opacity-0 z-10'}`}
                     >
                         <ProductImage

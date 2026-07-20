@@ -36,6 +36,7 @@ const frameSizeVariants = {
 } as const;
 
 export interface ProductImageProps extends ImageProps {
+    productId: string,
     productType?: keyof typeof productTypeVariants,
     productHover?: keyof typeof productHoverVariants,
     frameSize?: keyof typeof frameSizeVariants,
@@ -44,6 +45,7 @@ export interface ProductImageProps extends ImageProps {
 }
 
 export function ProductImage({
+    productId,
     productType = "instock",
     productHover = "static",
     frameSize = "normal",

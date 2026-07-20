@@ -6,3 +6,4 @@ export { ScrollButton } from './ScrollButton/ScrollButton';
 export { Tag } from './Tag/Tag';
 export { Money } from './Money/Money';
 export { DiscountTag } from './DiscountTag/DiscountTag';
+export { SelectionButton } from './SelectionButton/SelectionButton';

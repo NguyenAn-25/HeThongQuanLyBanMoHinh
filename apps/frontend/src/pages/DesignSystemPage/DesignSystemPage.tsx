@@ -1,11 +1,10 @@
-import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, SelectionButton } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox } from '@/components/atomic/molecules'
+import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, JsonContentRenderer, type RichTextJSON } from '@/components/atomic/atoms';
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox, ProductDetailPriceCard } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
+import { ProductDetailInfoCard } from '@/components/atomic/organisms/ProductDetailInfoCard/ProductDetailInfoCard';
 import { useBreadcrumbStore } from '@/stores/breadcrum.store';
 import React, { useEffect } from 'react';
-import { ProductDetailPriceCard } from '../../components/atomic/molecules/ProductDetailPriceCard/ProductDetailPriceCard';
-
 
 function ComponentBox({ title, children }: { title: string; children: React.ReactNode }) {
     return (
@@ -64,6 +63,54 @@ export function DesignSystemPage() {
         status: "In Stock",
         brand: "BANDAI",
         type: "Scale Figure"
+    }
+
+    const JsonText: RichTextJSON = {
+        "type": "doc",
+        "content": [
+            {
+                "type": "paragraph",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": `🔥 LƯU Ý : Sản phẩm này cần INBOX SHOP ĐỂ ĐƯỢC TƯ VẤN  trước khi QUYẾT ĐỊNH đặt hàng !!!
+🔥 Xin vui lòng liên hệ shop nếu có bất kì câu hỏi nào!!!
+    ------
+
+🍒 Tên Sản Phẩm: Onii - chan wa Oshimai! - Oyama Mihari - 1 / 6 - Heisei Gyaru Ver. (Phat Company)
+🍒 Hãng:Phat Company
+🍒 Chất Liệu: PVC, ABS
+🍒 Kích Thước: 250mm
+🍒 Ngày Phát Hành: T7 / 2027
+
+------
+
+NA FIGURE - MÔ HÌNH ANIME CHÍNH HÃNG NHẬT BẢN
+#figure #mo_hinh #mo_hinh_nhan_vat #mo_hinh_anime #anime_figure #figure #mo_hinh_chinh_hang #mo_hinh_figure #figure_chinh_hang #mo_hinh_tinh #nendoroid #gameprize #scalefigure
+
+--- `
+                    }
+                ]
+            },
+            {
+                "type": "image",
+                "attrs": {
+                    "src": "https://res.cloudinary.com/saxphmdc/image/upload/v1784396052/product_mihari_detail2_taidol.webp",
+                }
+            },
+            {
+                "type": "image",
+                "attrs": {
+                    "src": "https://res.cloudinary.com/saxphmdc/image/upload/v1784396052/product_mihari_detail1_u5xf8i.webp",
+                }
+            },
+            {
+                "type": "image",
+                "attrs": {
+                    "src": "https://res.cloudinary.com/saxphmdc/image/upload/v1784329584/product_mihari_mfodt5.png",
+                }
+            }
+        ]
     }
 
     return (
@@ -190,7 +237,7 @@ export function DesignSystemPage() {
                         <div className='w-64'>
                             <VideoCard
                                 publicId='video_jujutsu_by13m7'
-                                text='MÔ HÌNH GOJO X SUKUNA LUMINASTA (SEGA) - M FIGURE'
+                                text='MÔ HÌNH GOJO X SUKUNA LUMINASTA (SEGA) - NA FIGURE'
                             />
                         </div>
                     </ComponentBox>
@@ -202,7 +249,7 @@ export function DesignSystemPage() {
                     <ComponentBox title="ProductImage">
                         <div className="w-xl">
                             <ProductImage
-                            productId={"1"}
+                                productId={"1"}
                                 publicId={productId2}
                                 productType='instock'
                                 frameSize='large'
@@ -212,7 +259,7 @@ export function DesignSystemPage() {
                         </div>
                         <div className="w-32">
                             <ProductImage
-                            productId={"1"}
+                                productId={"1"}
                                 publicId={productId}
                                 productType='instock'
                                 frameSize='small'
@@ -284,6 +331,13 @@ export function DesignSystemPage() {
                     <ComponentBox title="CategoryCard">
                         <div className='w-full'>
                             <CategoriesCard />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="ProductDetailInfoCard">
+                        <div className='w-full'>
+                            <ProductDetailInfoCard
+                                jsonData={JsonText}
+                            />
                         </div>
                     </ComponentBox>
                 </div>

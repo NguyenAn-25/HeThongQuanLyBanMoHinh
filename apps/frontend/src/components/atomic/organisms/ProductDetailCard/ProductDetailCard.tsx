@@ -36,17 +36,19 @@ interface ProductDetailCardProps {
 export function ProductDetailCard({ text }: ProductDetailCardProps) {
     return (
         <div className='w-full grid grid-cols-12 bg-card-bg p-4 gap-4 rounded-lg'>
-            <div className="w-full flex flex-col col-span-9 gap-4">
+            {/* main detail */}
+            <div className="w-full flex flex-col col-span-12 xl:col-span-9 gap-4">
                 <div className="text-2xl font-semibold">
                     {text}
                 </div>
-                <div className="w-full grid grid-cols-9 gap-4">
-                    <div className="col-span-5">
+                {/* detail & sale box */}
+                <div className="w-full grid grid-cols-12 xl:grid-cols-9 gap-4">
+                    <div className="col-span-12 lg:col-span-6 xl:col-span-5">
                         <ProductDetailSetImages
                             productImages={products}
                         />
                     </div>
-                    <div className="col-span-4 flex flex-col gap-4">
+                    <div className="col-span-12 lg:col-span-6 xl:col-span-4 flex flex-col gap-4">
                         <ProductDetailCategory
                             {...productDetailCategory}
                         />
@@ -78,7 +80,8 @@ export function ProductDetailCard({ text }: ProductDetailCardProps) {
 
                 </div>
             </div>
-            <div className="col-span-3">
+            {/* support box */}
+            <div className="col-span-12 xl:col-span-3">
                 <div className="flex flex-col gap-4">
                     <CommitmentBox />
                     <SupportBox />

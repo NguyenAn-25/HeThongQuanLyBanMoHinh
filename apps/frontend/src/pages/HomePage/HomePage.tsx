@@ -50,7 +50,7 @@ const saleProducts = [
         price: 2000000
     }
 ].map((product, index) => ({
-    productId: index + 1,
+    productId: (index + 1).toString(),
     ...product,
 }));
 
@@ -118,7 +118,7 @@ const instockProducts = [
         price: 2000000
     }
 ].map((product, index) => ({
-    productId: index + 1,
+    productId: (index + 1).toString(),
     ...product,
 }));
 
@@ -186,7 +186,7 @@ const preorderProducts = [
         price: 2000000
     }
 ].map((product, index) => ({
-    productId: index + 1,
+    productId: (index + 1).toString(),
     ...product,
 }));
 

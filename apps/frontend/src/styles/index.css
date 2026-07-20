@@ -5,19 +5,25 @@
   /* Font */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   /* Palette */
-  --color-primary: theme(--color-amber-300);       
+  --color-primary: theme(--color-amber-300);
   --color-primary-hover: theme(--color-amber-400);
-  --color-secondary: theme(--color-lime-700);     
-  
-  --color-app-bg: theme(--color-gray-100);     
-  --color-card-bg: theme(--color-white);    
+  --color-secondary: theme(--color-lime-700);
 
-  --color-text-main: theme(--color-slate-950);   
-  --color-text-muted: theme(--color-slate-500);   
+  --color-app-bg: theme(--color-gray-100);
+  --color-card-bg: theme(--color-white);
 
-  --color-border-main: theme(--color-slate-200); 
+  --color-text-main: theme(--color-slate-950);
+  --color-text-muted: theme(--color-slate-500);
+
+  --color-border-main: theme(--color-slate-200);
 
   --color-gray-light: theme(--color-gray-400);
+  --color-bg-light: theme(--color-gray-50);
+
+  --color-dark-yellow: theme(--color-yellow-800);
+  --color-base-orange: theme(--color-amber-500);
+
+  --color-light-orange: theme(--color-amber-100);
 }
 
 @layer base {
@@ -42,9 +48,15 @@
 }
 
 @layer components {
-  /* .btn-primary {
-    @apply px-4 py-2 bg-blue-600 text-white font-medium rounded-lg 
-           hover:bg-blue-700 active:scale-95 transition-all duration-200 
-           disabled:opacity-50 disabled:pointer-events-none;
-  } */
+  /* input không có nút chọn Cho Chrome, Safari, Edge và Opera */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* input không có nút chọn Cho Firefox */
+  input[type="number"] {
+    appearance: none; /* Dùng appearance chuẩn với giá trị none */
+  }
 }

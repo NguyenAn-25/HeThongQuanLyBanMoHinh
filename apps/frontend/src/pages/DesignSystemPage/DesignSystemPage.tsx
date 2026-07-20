@@ -1,9 +1,10 @@
-import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages } from '@/components/atomic/molecules'
+import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, SelectionButton } from '@/components/atomic/atoms';
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
 import { useBreadcrumbStore } from '@/stores/breadcrum.store';
 import React, { useEffect } from 'react';
+import { ProductDetailPriceCard } from '../../components/atomic/molecules/ProductDetailPriceCard/ProductDetailPriceCard';
 
 
 function ComponentBox({ title, children }: { title: string; children: React.ReactNode }) {
@@ -52,13 +53,18 @@ export function DesignSystemPage() {
         setBreadscrumbItems([{ label: "Sản phẩm" }]);
     }, [setBreadscrumbItems]);
     const productDetails = [
-        { id: '1', publicId: "product_mihari_mfodt5" },
-        { id: '2', publicId: "product_mihari_detail1_u5xf8i" },
-        { id: '3', publicId: "product_mihari_detail2_taidol" },
-        { id: '4', publicId: "product_mihari_detail1_u5xf8i" },
-        { id: '5', publicId: "product_mihari_detail2_taidol" },
+        { productId: '1', publicId: "product_mihari_mfodt5" },
+        { productId: '2', publicId: "product_mihari_detail1_u5xf8i" },
+        { productId: '3', publicId: "product_mihari_detail2_taidol" },
+        { productId: '4', publicId: "product_mihari_detail1_u5xf8i" },
+        { productId: '5', publicId: "product_mihari_detail2_taidol" },
     ]
 
+    const productDetailCategory = {
+        status: "In Stock",
+        brand: "BANDAI",
+        type: "Scale Figure"
+    }
 
     return (
         <div className="min-h-screen p-8">
@@ -153,7 +159,7 @@ export function DesignSystemPage() {
                     <ComponentBox title="ProductCard">
                         <div className='w-60'>
                             <ProductCard
-                                productId={1}
+                                productId={"1"}
                                 publicId={productId}
                                 text='Hatsune Miku Phong Cách Đường Phố'
                                 price={price}
@@ -162,7 +168,7 @@ export function DesignSystemPage() {
                         </div>
                         <div className='w-60'>
                             <ProductCard
-                                productId={1}
+                                productId={"1"}
                                 publicId={productId}
                                 text='Hatsune Miku Phong Cách Đường Phố'
                                 price={price}
@@ -196,6 +202,7 @@ export function DesignSystemPage() {
                     <ComponentBox title="ProductImage">
                         <div className="w-xl">
                             <ProductImage
+                            productId={"1"}
                                 publicId={productId2}
                                 productType='instock'
                                 frameSize='large'
@@ -205,6 +212,7 @@ export function DesignSystemPage() {
                         </div>
                         <div className="w-32">
                             <ProductImage
+                            productId={"1"}
                                 publicId={productId}
                                 productType='instock'
                                 frameSize='small'
@@ -217,6 +225,49 @@ export function DesignSystemPage() {
                             <ProductDetailSetImages
                                 productImages={productDetails}
                             />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="ProductDetailCategory">
+                        <div>
+                            <ProductDetailCategory
+                                {...productDetailCategory}
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="ProductDetailPriceCard">
+                        <div>
+                            <ProductDetailPriceCard
+                                price={2000000}
+                            />
+                        </div>
+                        <div>
+                            <ProductDetailPriceCard
+                                price={2000000}
+                                discountPrice={1500000}
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="CategorySelector">
+                        <div className='w-full p-4 bg-white'>
+                            <CategorySelector
+                                text="Nguồn"
+                                selections={["Trung", "Nhật"]}
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Counter">
+                        <div>
+                            <Counter />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="CommitmentBox">
+                        <div>
+                            <CommitmentBox />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="SupportBox">
+                        <div>
+                            <SupportBox />
                         </div>
                     </ComponentBox>
                 </div>

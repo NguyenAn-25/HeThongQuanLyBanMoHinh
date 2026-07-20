@@ -21,7 +21,7 @@ export function Breadcrumb() {
     const newItems = [defaultItem, ...breadScrumItems]
 
     return (
-        <div className="w-full flex bg-card-bg p-2 rounded-lg font-light">
+        <div className="w-full flex bg-card-bg p-4 rounded-lg font-light">
             {
                 newItems.map((item, index) => {
                     const isLast = index === newItems.length - 1;

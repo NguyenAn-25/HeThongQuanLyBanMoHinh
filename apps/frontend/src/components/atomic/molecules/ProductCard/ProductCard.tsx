@@ -1,7 +1,4 @@
 import { Money } from '../../atoms';
-import { Image } from '../../atoms/Image/Image';
-import { Tag } from '../../atoms/Tag/Tag';
-import { DiscountTag } from '../../atoms/DiscountTag/DiscountTag';
 import { CalculateDiscountPercentage } from "@/utils/calculator"
 import { Link } from 'react-router-dom';
 import { ProductImage, type ProductImageProps } from '../ProductImage/ProductImage';
@@ -9,7 +6,6 @@ import { ProductImage, type ProductImageProps } from '../ProductImage/ProductIma
 
 
 export interface ProductCardProps extends ProductImageProps {
-    productId: number,
     text: string,
     price: number,
     salePrice?: number,
@@ -36,6 +32,7 @@ export function ProductCard({
                 discountPercent={discountPercent}
                 productHover="zoom"
                 aspect='square'
+                productId={productId}
                 {...props}
             />
             <div

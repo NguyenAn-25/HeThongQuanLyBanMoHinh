@@ -20,4 +20,10 @@ export { ImageCycler } from "./ImageCycler/ImageCycler";
 export { Breadcrumb, type BreadcrumbItems, type BreadcrumbProps } from "./Breadcrumb/Breadcrumb";
 export { ProductImage, type ProductImageProps } from "./ProductImage/ProductImage";
 export { ProductDetailSetImages } from "./ProductDetailSetImages/ProductDetailSetImages";
+export { ProductDetailCategory } from "./ProductDetailCategory/ProductDetailCategory";
+export { ProductDetailPriceCard } from "./ProductDetailPriceCard/ProductDetailPriceCard";
+export { CategorySelector } from "./CategorySelector/CategorySelector";
+export { Counter } from "./Counter/Counter";
+export { CommitmentBox } from "./CommitmentBox/CommitmentBox";
+export { SupportBox } from "./SupportBox/SupportBox";
 

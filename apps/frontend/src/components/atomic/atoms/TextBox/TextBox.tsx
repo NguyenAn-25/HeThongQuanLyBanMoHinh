@@ -18,7 +18,6 @@ const textBoxVariants = cva(
 
 interface TextBoxProps extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof textBoxVariants> {
-    type?: 'text' | 'password' | 'email',
     placeholder?: string
 }
 

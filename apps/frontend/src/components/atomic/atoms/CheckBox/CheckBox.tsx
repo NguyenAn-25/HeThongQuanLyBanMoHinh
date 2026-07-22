@@ -15,12 +15,13 @@ interface CheckBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function CheckBox({
-    text="",
+    text = "",
     shape = "square",
     className,
     checked = false,
     checkBoxId = 0,
-    onCheck
+    onCheck,
+    ...props
 }: CheckBoxProps) {
 
     const handleCheck = (e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
@@ -35,6 +36,7 @@ export function CheckBox({
                 checked={checked}
                 onChange={(e) => handleCheck(e)}
                 className="sr-only"
+                {...props}
             />
 
             <div

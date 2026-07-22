@@ -24,6 +24,9 @@
   --color-base-orange: theme(--color-amber-500);
 
   --color-light-orange: theme(--color-amber-100);
+
+  --color-light-red: theme(--color-red-600);
+  --color-border-red: theme(--color-red-700);
 }
 
 @layer base {

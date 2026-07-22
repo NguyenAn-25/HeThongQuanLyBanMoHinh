@@ -8,3 +8,5 @@ export { Money } from './Money/Money';
 export { DiscountTag } from './DiscountTag/DiscountTag';
 export { SelectionButton } from './SelectionButton/SelectionButton';
 export { JsonContentRenderer, type RichTextJSON, type JsonContentRendererProps } from './JsonContentRenderer/JsonContentRenderer';
+export { CheckBox } from './CheckBox/CheckBox';
+export { ItemTag } from './ItemTag/ItemTag';

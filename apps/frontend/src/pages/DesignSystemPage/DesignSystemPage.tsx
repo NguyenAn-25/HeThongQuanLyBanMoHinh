@@ -1,10 +1,12 @@
-import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, JsonContentRenderer, type RichTextJSON } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox, ProductDetailPriceCard } from '@/components/atomic/molecules'
+import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, JsonContentRenderer, type RichTextJSON, CheckBox, ItemTag } from '@/components/atomic/atoms';
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox, ProductDetailPriceCard, SearchListSelected } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
 import { ProductDetailInfoCard } from '@/components/atomic/organisms/ProductDetailInfoCard/ProductDetailInfoCard';
 import { useBreadcrumbStore } from '@/stores/breadcrum.store';
 import React, { useEffect } from 'react';
+import { SearchFiltersContainer } from '../../components/atomic/organisms/SearchFiltersContainer/SearchFiltersContainer';
+import { SearchFilter } from '@/components/atomic/molecules/SearchFilter/SearchFilter';
 
 function ComponentBox({ title, children }: { title: string; children: React.ReactNode }) {
     return (
@@ -113,6 +115,38 @@ NA FIGURE - MÔ HÌNH ANIME CHÍNH HÃNG NHẬT BẢN
         ]
     }
 
+    const SearchFilterProps = {
+        title: "THƯƠNG HIỆU",
+        selections: [
+            "konami arcade games",
+            "BANDAI",
+            "Good Smile",
+            "TAITO",
+            "Fukuya",
+            "Furyu",
+            "SEGA"
+        ]
+    }
+
+    const SearchListSelectedProps = [
+        {
+            categoryIndex: 1,
+            text: "Bandai"
+        },
+        {
+            categoryIndex: 2,
+            text: "6000000"
+        },
+        {
+            categoryIndex: 2,
+            text: "6000000"
+        },
+        {
+            categoryIndex: 2,
+            text: "6000000"
+        },
+    ]
+
     return (
         <div className="min-h-screen p-8">
             <div className="w-full sm:w-130 md:w-176 lg:w-240 xl:w-280 2xl:w-336 mx-auto space-y-8">
@@ -180,6 +214,22 @@ NA FIGURE - MÔ HÌNH ANIME CHÍNH HÃNG NHẬT BẢN
                         <div>
                             <DiscountTag
                                 percent={20}
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="CheckBox">
+                        <div>
+                            <CheckBox
+                                shape='circle'
+                                text="abc"
+                                className='hover:text-primary'
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="ItemTag">
+                        <div>
+                            <ItemTag
+                                text="BANDAI"
                             />
                         </div>
                     </ComponentBox>
@@ -338,6 +388,11 @@ NA FIGURE - MÔ HÌNH ANIME CHÍNH HÃNG NHẬT BẢN
                             <ProductDetailInfoCard
                                 jsonData={JsonText}
                             />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="FiltersContainer">
+                        <div className='w-full'>
+                            <SearchFiltersContainer />
                         </div>
                     </ComponentBox>
                 </div>

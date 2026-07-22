@@ -8,4 +8,5 @@ export { CategoryGroupsCard } from "./CategoryGroupsCard/CategoryGroupsCard"
 export { ProductsCard } from "./ProductsCard/ProductsCard"
 export { VideosCard } from "./VideosCard/VideosCard"
 export { ProductDetailCard } from "./ProductDetailCard/ProductDetailCard"
+export { SearchFiltersContainer } from "./SearchFiltersContainer/SearchFiltersContainer"
 

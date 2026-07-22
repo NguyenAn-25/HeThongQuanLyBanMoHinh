@@ -96,7 +96,6 @@ export function SearchFiltersContainer() {
                 checkedIds: newCheckedIds
             }
             const newFilterState = filterState.map(filter => filter.categoryId === categoryId ? newFilter : filter);
-            console.log(newFilterState)
 
             setFilterState(newFilterState);
         }
@@ -110,7 +109,6 @@ export function SearchFiltersContainer() {
                     checkedIds: [checkboxId, ...filter.checkedIds],
                 }
                 const newFilterState = filterState.map(filter => filter.categoryId === categoryId ? newFilter : filter);
-                console.log(newFilterState)
                 setFilterState(newFilterState);
             }
             // case chưa có mảng trạng thái của filter với id categoryId
@@ -120,7 +118,6 @@ export function SearchFiltersContainer() {
                     checkedIds: [checkboxId]
                 }
                 const newFilterState = [...filterState, newFilter]
-                console.log(newFilterState)
                 setFilterState(newFilterState);
             }
         }
@@ -140,11 +137,15 @@ export function SearchFiltersContainer() {
         setFilterState(newFilterState);
     }
 
+    const handleClickClear = () => {
+        setFilterState([])
+    }
+
     const enableListSelected = listSelected.length !== 0
         && listSelected.some(filter => filter.checkedItems.length !== 0)
 
     return (
-        <div className="flex flex-col gap-4 bg-white">
+        <div className="w-full flex flex-col gap-4 bg-white">
             <div className="text-lg font-semibold">
                 BỘ LỌC SẢN PHẨM
             </div>
@@ -156,6 +157,7 @@ export function SearchFiltersContainer() {
                     <SearchListSelected
                         items={listSelected}
                         onChange={handleChangeListSelected}
+                        onClickClear={() => handleClickClear()}
                     />
                 )
             }

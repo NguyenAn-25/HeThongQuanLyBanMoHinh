@@ -5,6 +5,7 @@ import { Button } from '../../atoms/Button/Button';
 interface SearchListSelectedProps {
     items: SetSelected[]
     onChange: (categoryIndex: number, checkBoxId: number) => void
+    onClickClear: () => void
 }
 
 interface SetSelectedItem {
@@ -19,7 +20,8 @@ interface SetSelected {
 
 export function SearchListSelected({
     items,
-    onChange
+    onChange,
+    onClickClear
 }: SearchListSelectedProps) {
 
     return (
@@ -29,6 +31,7 @@ export function SearchListSelected({
                 <Button
                     text="Xóa tất cả"
                     className="hover:text-light-red"
+                    onClick={() => onClickClear()}
                 />
             </div>
             <div className="flex flex-col gap-2">

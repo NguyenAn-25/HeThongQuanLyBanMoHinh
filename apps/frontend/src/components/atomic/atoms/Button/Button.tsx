@@ -21,6 +21,7 @@ const buttonVariants = cva(
 );
 
 const iconSizeVariants = {
+    '2xs': 'w-3',
     xs: 'w-5',
     sm: 'w-7',
     md: 'w-10',

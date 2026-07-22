@@ -1,12 +1,11 @@
-import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, JsonContentRenderer, type RichTextJSON, CheckBox, ItemTag } from '@/components/atomic/atoms';
-import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox, ProductDetailPriceCard, SearchListSelected } from '@/components/atomic/molecules'
+import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, JsonContentRenderer, type RichTextJSON, CheckBox, ItemTag, RadioBox } from '@/components/atomic/atoms';
+import { ButtonTextList, type ButtonSelectionL1, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox, ProductDetailPriceCard, SearchListSelected, SortingBar, PaginationBar } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
 import { ProductDetailInfoCard } from '@/components/atomic/organisms/ProductDetailInfoCard/ProductDetailInfoCard';
 import { useBreadcrumbStore } from '@/stores/breadcrum.store';
 import React, { useEffect } from 'react';
 import { SearchFiltersContainer } from '../../components/atomic/organisms/SearchFiltersContainer/SearchFiltersContainer';
-import { SearchFilter } from '@/components/atomic/molecules/SearchFilter/SearchFilter';
 
 function ComponentBox({ title, children }: { title: string; children: React.ReactNode }) {
     return (
@@ -233,6 +232,26 @@ NA FIGURE - MÔ HÌNH ANIME CHÍNH HÃNG NHẬT BẢN
                             />
                         </div>
                     </ComponentBox>
+                    <ComponentBox title="RadioBox">
+                        <div>
+                            <RadioBox
+                                text="radio"
+                                radioId={1}
+                            />
+                        </div>
+                        <div>
+                            <RadioBox
+                                text="radio"
+                                radioId={1}
+                                checked={true}
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="SortingBar">
+                        <div className='w-full'>
+                            <SortingBar />
+                        </div>
+                    </ComponentBox>
                 </div>
 
                 {/* MOLECULES */}
@@ -365,6 +384,14 @@ NA FIGURE - MÔ HÌNH ANIME CHÍNH HÃNG NHẬT BẢN
                     <ComponentBox title="SupportBox">
                         <div>
                             <SupportBox />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="PaginationBar">
+                        <div>
+                            <PaginationBar 
+                                totalPage={10}
+                                currentPage={5}
+                            />
                         </div>
                     </ComponentBox>
                 </div>

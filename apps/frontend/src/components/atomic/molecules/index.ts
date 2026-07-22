@@ -26,4 +26,5 @@ export { CategorySelector } from "./CategorySelector/CategorySelector";
 export { Counter } from "./Counter/Counter";
 export { CommitmentBox } from "./CommitmentBox/CommitmentBox";
 export { SupportBox } from "./SupportBox/SupportBox";
+export { SearchListSelected } from "./SearchListSelected/SearchListSelected";
 

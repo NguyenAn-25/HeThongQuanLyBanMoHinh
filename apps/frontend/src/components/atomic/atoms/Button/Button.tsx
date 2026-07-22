@@ -49,7 +49,7 @@ export const Button = (
     }: ButtonProps
 ) => {
     return (
-        <button type={type} className={cn(buttonVariants({ iconPosition }), className)} {...props}>
+        <button type={type} title={text} className={cn(buttonVariants({ iconPosition }), className)} {...props}>
             {iconName &&
                 <div className={iconSizeVariants[iconSize]}>
                     <Icon name={iconName} />

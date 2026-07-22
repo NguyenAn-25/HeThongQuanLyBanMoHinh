@@ -33,13 +33,15 @@ export function Breadcrumb() {
                             >
                                 <div className="flex">
                                     <div className="hover:text-primary">
-                                        {item.label}
+                                        {typeof item.label === 'object' ? JSON.stringify(item.label) : item.label}
                                     </div>
                                     {!isLast && <span className="mx-2">/</span>}
                                 </div>
                             </Link>
                             :
-                            <div key={index} >{item.label} {!isLast && <span className="mx-2">/</span>}</div>
+                            <div key={index} >
+                                {typeof item.label === 'object' ? JSON.stringify(item.label) : item.label} {!isLast && <span className="mx-2">/</span>}
+                            </div>
                     )
                 })
             }

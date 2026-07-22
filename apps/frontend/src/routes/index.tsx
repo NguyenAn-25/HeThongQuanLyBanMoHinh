@@ -1,7 +1,7 @@
 import App from '@/App'
 import { CustomerLayout } from '@/components/atomic/templates'
 import { BreadcrumbLayout } from '@/components/atomic/templates/BreadcrumbLayout/BreadcrumbLayout'
-import { DesignSystemPage, HomePage, ProductDetailPage } from '@/pages'
+import { DesignSystemPage, HomePage, ProductDetailPage, SearchPage } from '@/pages'
 import { createBrowserRouter } from 'react-router-dom'
 export const router = createBrowserRouter([
     {
@@ -22,6 +22,10 @@ export const router = createBrowserRouter([
                                 path: "/products/:id",
                                 element: <ProductDetailPage />
                             },
+                            {
+                                path: "/search",
+                                element: <SearchPage />
+                            }
                         ]
                     },
 

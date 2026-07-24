@@ -1,19 +1,17 @@
-import { CategorySelections, type CategorySet } from "../../molecules"
 import { ProductImage } from '../../molecules/ProductImage/ProductImage';
-import { Counter } from '../../molecules/Counter/Counter';
 import { Money } from '../../atoms/Money/Money';
-import type { TableProductCartModel } from "../ProductsInCartContainer/ProductsInCartContainer";
+import type { TableProductOrderModel } from "../ProductsInOrderContainer/ProductsInOrderContainer";
 import { Button } from '../../atoms/Button/Button';
 
-interface ProductsInCartMobiProps {
-    items: TableProductCartModel[],
+interface ProductsInOrderMobiProps {
+    items: TableProductOrderModel[],
     className?: string
 }
 
-export function ProductsInCartMobi({
+export function ProductsInOrderMobi({
     items,
     className
-}: ProductsInCartMobiProps) {
+}: ProductsInOrderMobiProps) {
     return (
         <div className={`flex flex-col rounded-md p-4 gap-2 ${className}`}>
             {
@@ -30,22 +28,16 @@ export function ProductsInCartMobi({
                             <div className="flex flex-col w-full gap-1">
                                 <div className="overflow-hidden text-nowrap">{item.name}</div>
                                 <div className="flex justify-between">
-                                    <CategorySelections
-                                        sets={item.category}
-                                    />
-                                    <Counter
-                                        defaultQuantity={item.quantity}
-                                    />
+                                    <div>
+                                        {item.category.join(", ")}
+                                    </div>
+                                    <div>
+                                        x{item.quantity}
+                                    </div>
                                 </div>
-                                <div className="flex justify-between">
-                                    <Money
-                                        price={item.price}
-                                    />
-                                    <Button
-                                        text="Xóa"
-                                        className="border border-light-red text-light-red px-2 py-1 rounded text-sm"
-                                    />
-                                </div>
+                                <Money
+                                    price={item.price}
+                                />
                             </div>
                         </div>
                     )

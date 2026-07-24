@@ -11,7 +11,7 @@ export function TotalCartContainer({
 }: TotalCartContainerProps) {
     return (
         <div className="w-full bg-card-bg p-4 flex items-center gap-4 rounded-lg">
-            <div className='flex-1 flex gap-1 flex-wrap text-sm lg:text-right lg:text-base'>
+            <div className='flex-1 flex gap-1 flex-wrap text-sm lg:justify-end lg:text-base'>
                 <div className='text-nowrap'>
                     Tổng cộng
                 </div>

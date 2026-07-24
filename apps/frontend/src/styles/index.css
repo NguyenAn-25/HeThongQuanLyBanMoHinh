@@ -27,6 +27,8 @@
 
   --color-light-red: theme(--color-red-600);
   --color-border-red: theme(--color-red-700);
+  --color-white-hover: theme(--color-gray-200);
+  --color-red-hover: theme(--color-red-500);
 }
 
 @layer base {

@@ -29,4 +29,7 @@ export { SupportBox } from "./SupportBox/SupportBox";
 export { SearchListSelected } from "./SearchListSelected/SearchListSelected";
 export { SortingBar } from "./SortingBar/SortingBar";
 export { PaginationBar } from "./PaginationBar/PaginationBar";
+export { Table } from "./Table/Table";
+export { CategorySelections, type CategorySet } from "./CategorySelections/CategorySelections";
+
 

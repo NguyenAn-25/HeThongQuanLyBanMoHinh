@@ -10,7 +10,7 @@ const imgSizeVariants = {
     '3xl': 'w-32',
 };
 
-interface ImageButtonProps {
+interface ImageButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     publicId: string,
     text: string,
     imgSize?: keyof typeof imgSizeVariants,
@@ -25,10 +25,11 @@ export function ImageButton({
     imgSize = "xs",
     className,
     imgClassName,
-    textClassName
+    textClassName,
+    ...props
 }: ImageButtonProps) {
     return (
-        <div className={`flex flex-col gap-1 hover:text-primary items-center cursor-pointer ${className}`}>
+        <button className={`flex flex-col gap-1 hover:text-primary items-center cursor-pointer ${className}`} {...props}>
             <div className={imgSizeVariants[imgSize]}>
                 <Image
                     publicId={publicId}
@@ -41,6 +42,6 @@ export function ImageButton({
             >
                 {text}
             </div>
-        </div>
+        </button>
     )
 }

@@ -5,6 +5,7 @@ import { CategorySelector } from '../../molecules/CategorySelector/CategorySelec
 import { Counter } from '../../molecules/Counter/Counter';
 import { Button } from '../../atoms/Button/Button';
 import { SupportBox } from '../../molecules/SupportBox/SupportBox';
+import { useNavigate } from "react-router-dom";
 
 const products: ProductImageProps[] = [
     { productId: '1', publicId: "product_mihari_mfodt5" },
@@ -34,6 +35,11 @@ interface ProductDetailCardProps {
     text: string
 }
 export function ProductDetailCard({ text }: ProductDetailCardProps) {
+    const navigate = useNavigate();
+
+    const handleClickButtonBuy = () => {
+        navigate(`/cart`);
+    }
     return (
         <div className='w-full grid grid-cols-12 bg-card-bg p-4 gap-4 rounded-lg'>
             {/* main detail */}
@@ -66,6 +72,7 @@ export function ProductDetailCard({ text }: ProductDetailCardProps) {
                         <div className="flex w-full gap-4">
                             <Button
                                 text="MUA NGAY"
+                                onClick={() => handleClickButtonBuy()}
                                 className="w-full bg-primary text-lg font-semibold text-white justify-center py-4 rounded-lg"
                             />
                             <Button

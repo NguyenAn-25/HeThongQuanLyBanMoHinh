@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Button, TextBox } from "../../atoms";
 
-export function Counter() {
-    const [value, setValue] = useState<number | "">(1);
+interface CounterProps {
+    defaultQuantity?: number
+}
+
+export function Counter({
+    defaultQuantity = 1
+}: CounterProps) {
+    const [value, setValue] = useState<number | "">(defaultQuantity);
 
     const handleInputChange = (value: string) => {
         const valueAsString = value;
@@ -16,12 +22,12 @@ export function Counter() {
     }
 
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
             <Button
                 text=""
                 iconName="Minus"
                 onClick={() => handleButtonClick("decrease")}
-                className="border border-border-main rounded-lg px-2 bg-card-bg hover:border-primary text-primary"
+                className="border border-border-main rounded-lg p-2 bg-card-bg hover:border-primary text-primary"
             />
             <div className="w-14">
                 <TextBox
@@ -37,7 +43,7 @@ export function Counter() {
                 text=""
                 iconName="Plus"
                 onClick={() => handleButtonClick("increase")}
-                className="border border-border-main rounded-lg px-2 bg-card-bg hover:border-primary text-primary"
+                className="border border-border-main rounded-lg  p-2 bg-card-bg hover:border-primary text-primary"
             />
         </div>
     )

@@ -1,63 +1,24 @@
-import { Button, Money } from '../../atoms';
-import { CategorySelections, Counter, ProductImage, type CategorySet } from '../../molecules';
-import { Table, type Column } from '../../molecules/Table/Table';
-import { ProductsInCartMobi } from '../ProductsInCartMobi/ProductsInCartMobi';
+import { Money } from "../../atoms";
+import { ProductImage, Table } from "../../molecules";
+import type { Column } from "../../molecules/Table/Table";
+import { ProductsInOrderMobi } from "../ProductsInOrderMobi/ProductsInOrderMobi";
 
-export interface TableProductCartModel {
+export interface TableProductOrderModel {
     id: string,
     publicId: string,
     name: string,
-    category: CategorySet[],
+    category: string[],
     price: number,
     quantity: number,
     totalPrice: number
 }
 
-const mockCategory: CategorySet[] = [
-    {
-        categoryId: 1,
-        categoryName: "Nguồn",
-        selections: [
-            {
-                id: 1,
-                name: "Trung"
-            },
-            {
-                id: 2,
-                name: "Nhật"
-            },
-        ],
-        selectedProp: {
-            id: 1,
-            name: "Trung"
-        }
-    },
-    {
-        categoryId: 2,
-        categoryName: "Scale",
-        selections: [
-            {
-                id: 3,
-                name: "1/6"
-            },
-            {
-                id: 4,
-                name: "1/2"
-            },
-        ],
-        selectedProp: {
-            id: 3,
-            name: "1/6"
-        }
-    }
-]
-
-const mockTableProducts: TableProductCartModel[] = [
+const mockTableProducts: TableProductOrderModel[] = [
     {
         id: '1',
         publicId: 'product_hatsune_miku_straw_berry_j6kbwz',
         name: 'Hatsune Miku phiên bản Hoa Anh Đào',
-        category: mockCategory,
+        category: ["Trung", "1/6"],
         price: 2000000,
         quantity: 1,
         totalPrice: 2000000
@@ -66,14 +27,14 @@ const mockTableProducts: TableProductCartModel[] = [
         id: '2',
         publicId: 'product_hatsune_miku_straw_berry_j6kbwz',
         name: 'Hatsune Miku phiên bản Hoa Anh Đào',
-        category: mockCategory,
+        category: ["Trung", "1/6"],
         price: 2000000,
         quantity: 2,
         totalPrice: 2000000
     },
 ];
 
-const columns: Column<TableProductCartModel>[] = [
+const columns: Column<TableProductOrderModel>[] = [
     {
         header: 'Sản phẩm',
         render: (item) => (
@@ -87,9 +48,14 @@ const columns: Column<TableProductCartModel>[] = [
                     />
                 </div>
                 <div className="overflow-hidden line-clamp-2">{item.name}</div>
-                <CategorySelections
-                    sets={item.category}
-                />
+                <div className="text-text-muted">
+                    <div className="text-left">
+                        Phân loại hàng:
+                    </div>
+                    <div className="">
+                        {item.category.join(", ")}
+                    </div>
+                </div>
             </div>
         ),
     },
@@ -106,13 +72,7 @@ const columns: Column<TableProductCartModel>[] = [
     },
     {
         header: 'Số lượng',
-        render: (item) => (
-            <div className="flex justify-center">
-                <Counter
-                    defaultQuantity={item.quantity}
-                />
-            </div>
-        ),
+        accessorKey: 'quantity'
     },
     {
         header: 'Tổng tiền',
@@ -124,20 +84,9 @@ const columns: Column<TableProductCartModel>[] = [
             </div>
         ),
     },
-    {
-        header: 'Thao tác',
-        render: (_) => (
-            <div className="flex justify-center">
-                <Button
-                    text="Xóa"
-                    className="bg-light-red rounded-md p-2 text-white hover:bg-red-hover"
-                />
-            </div>
-        ),
-    },
 ];
 
-export function ProductsInCartContainer() {
+export function ProductsInOrderContainer() {
     return (
         <div className='bg-card-bg p-2 rounded-lg'>
             <Table
@@ -146,7 +95,7 @@ export function ProductsInCartContainer() {
                 keyExtractor={(item) => item.id}
                 className='hidden lg:table'
             />
-            <ProductsInCartMobi
+            <ProductsInOrderMobi
                 items={mockTableProducts}
                 className='block lg:hidden'
             />

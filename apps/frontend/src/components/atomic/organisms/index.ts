@@ -14,3 +14,5 @@ export { ResultSearchProductsContainer } from "./ResultSearchProductsContainer/R
 export { ProductsInCartContainer } from "./ProductsInCartContainer/ProductsInCartContainer"
 export { TotalCartContainer } from "./TotalCartContainer/TotalCartContainer"
 export { ProductsInCartMobi } from "./ProductsInCartMobi/ProductsInCartMobi"
+export { OrderAddressCard } from "./OrderAddressCard/OrderAddressCard"
+export { ProductsInOrderMobi } from "./ProductsInOrderMobi/ProductsInOrderMobi"

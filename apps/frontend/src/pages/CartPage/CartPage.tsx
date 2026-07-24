@@ -80,7 +80,7 @@ export function CartPage() {
         setBreadscrumbItems([{ label: "Giỏ hàng" }]);
     }, [setBreadscrumbItems]);
     return (
-        <div className="flex flex-col py-4 gap-4">
+        <div className="flex flex-col gap-4">
             <ProductsInCartContainer />
             <TotalCartContainer
                 {...mockTotal}

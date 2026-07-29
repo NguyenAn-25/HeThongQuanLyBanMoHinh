@@ -1,8 +1,7 @@
-import { Button, Image, Money, type RichTextJSON } from "@/components/atomic/atoms";
+import { Button, Money, type RichTextJSON } from "@/components/atomic/atoms";
 import { CategorySelections, Counter, ProductImage, type ButtonSelectionL1, type CategorySet } from "@/components/atomic/molecules";
 import type { Column } from "@/components/atomic/molecules/Table/Table";
-import { useBreadcrumbStore } from "@/stores/breadcrum.store";
-import { useEffect } from "react";
+
 
 export const buttonSelections: ButtonSelectionL1[] = [
     {
@@ -246,5 +245,20 @@ export const variantSelections = [
         ],
         selectedProp: { id: 1, name: "1/6" }
     }
+]
+
+export const mockCombobox = [
+    {
+        id: 1,
+        text: "Tất cả"
+    },
+    {
+        id: 2,
+        text: "Đã duyệt"
+    },
+    {
+        id: 3,
+        text: "Chờ giao hàng"
+    },
 ]
 

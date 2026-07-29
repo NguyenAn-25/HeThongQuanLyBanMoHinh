@@ -16,3 +16,8 @@ export { TotalCartContainer } from "./TotalCartContainer/TotalCartContainer"
 export { ProductsInCartMobi } from "./ProductsInCartMobi/ProductsInCartMobi"
 export { OrderAddressCard } from "./OrderAddressCard/OrderAddressCard"
 export { ProductsInOrderMobi } from "./ProductsInOrderMobi/ProductsInOrderMobi"
+export { CustomerOrdersSearchBar } from "./CustomerOrdersSearchBar/CustomerOrdersSearchBar"
+export { CustomerOrdersItem } from "./CustomerOrdersItem/CustomerOrdersItem"
+export { ProcessOrderDetailBar } from "./ProcessOrderDetailBar/ProcessOrderDetailBar"
+export { CustomerOrderDetailContainer } from "./CustomerOrderDetailContainer/CustomerOrderDetailContainer"
+

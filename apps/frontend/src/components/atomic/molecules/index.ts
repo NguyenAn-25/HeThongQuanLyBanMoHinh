@@ -31,5 +31,10 @@ export { SortingBar } from "./SortingBar/SortingBar";
 export { PaginationBar } from "./PaginationBar/PaginationBar";
 export { Table } from "./Table/Table";
 export { CategorySelections, type CategorySet } from "./CategorySelections/CategorySelections";
+export { SearchComboboxBar } from "./SearchComboboxBar/SearchComboboxBar";
+export { DropDownMenu } from "./DropDownMenu/DropDownMenu";
+export { ProductOrderDetailItem } from "./ProductOrderDetailItem/ProductOrderDetailItem"
+export { ProcessNode } from "./ProcessNode/ProcessNode"
+
 
 

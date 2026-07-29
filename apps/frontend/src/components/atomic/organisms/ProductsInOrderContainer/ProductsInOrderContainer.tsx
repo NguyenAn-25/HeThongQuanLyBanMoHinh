@@ -10,7 +10,8 @@ export interface TableProductOrderModel {
     category: string[],
     price: number,
     quantity: number,
-    totalPrice: number
+    totalPrice: number,
+    preOrderPrice?: number
 }
 
 const mockTableProducts: TableProductOrderModel[] = [

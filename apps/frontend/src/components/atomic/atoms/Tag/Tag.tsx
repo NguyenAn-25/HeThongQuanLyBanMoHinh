@@ -7,6 +7,7 @@ const tagVariants = cva(
         variants: {
             size: {
                 small: "w-16 py-0.25 text-[0.5rem] font-bold border-2",
+                semi: "w-26 py-0.5 text-sm font-bold border-2",
                 medium: "w-36 py-1 text-base font-bold border-4",
             },
             color: {

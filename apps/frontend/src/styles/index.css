@@ -18,6 +18,7 @@
   --color-border-main: theme(--color-slate-200);
 
   --color-gray-light: theme(--color-gray-400);
+  --color-gray-hard: theme(--color-gray-600);
   --color-bg-light: theme(--color-gray-50);
 
   --color-dark-yellow: theme(--color-yellow-800);
@@ -33,11 +34,16 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     -webkit-tap-highlight-color: transparent;
     font-family: var(--font-sans);
     color: var(--color-text-main);
     background-color: var(--color-app-bg);
+  }
+
+  /* Chỉ bật cuộn mượt khi người dùng tương tác cuộn tới #anchor */
+  :focus-within, html:has(:target) {
+    scroll-behavior: smooth;
   }
 
   ::-webkit-scrollbar {

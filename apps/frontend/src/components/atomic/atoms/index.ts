@@ -12,3 +12,4 @@ export { CheckBox } from './CheckBox/CheckBox';
 export { ItemTag } from './ItemTag/ItemTag';
 export { RadioBox } from './RadioBox/RadioBox';
 export { Overlay } from './Overlay/Overlay';
+export { Combobox } from './Combobox/Combobox';

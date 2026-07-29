@@ -1,10 +1,10 @@
-import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, CheckBox, ItemTag, RadioBox } from '@/components/atomic/atoms';
-import { ButtonTextList, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox, ProductDetailPriceCard, SortingBar, Table, CategorySelections } from '@/components/atomic/molecules'
+import { Image, Icon, Button, TextBox, ScrollButton, Tag, DiscountTag, CheckBox, ItemTag, RadioBox, Combobox } from '@/components/atomic/atoms';
+import { ButtonTextList, SearchBar, ProductCard, CategoryGroup, VideoCard, Breadcrumb, ProductImage, ProductDetailSetImages, ProductDetailCategory, CategorySelector, Counter, CommitmentBox, SupportBox, ProductDetailPriceCard, SortingBar, Table, CategorySelections, SearchComboboxBar, ProcessNode } from '@/components/atomic/molecules'
 import { Header } from '@/components/atomic/organisms'
 import { CategoriesCard } from '@/components/atomic/organisms/CategoriesCard/CategoriesCard';
 import { ProductDetailInfoCard } from '@/components/atomic/organisms/ProductDetailInfoCard/ProductDetailInfoCard';
 import { SearchFiltersContainer } from '../../components/atomic/organisms/SearchFiltersContainer/SearchFiltersContainer';
-import { buttonSelections, productId, price, salePrice, categoryGroupIds, productId2, productDetails, productDetailCategory, JsonText, mockTableProducts, columns, variantSelections } from './MockData';
+import { buttonSelections, productId, price, salePrice, categoryGroupIds, productId2, productDetails, productDetailCategory, JsonText, mockTableProducts, columns, variantSelections, mockCombobox } from './MockData';
 import { useBreadcrumbStore } from '@/stores/breadcrum.store';
 import { useEffect } from 'react';
 
@@ -130,6 +130,11 @@ export function DesignSystemPage() {
                     <ComponentBox title="SortingBar">
                         <div className='w-full'>
                             <SortingBar />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="Combobox">
+                        <div className='w-full'>
+                            <SearchComboboxBar />
                         </div>
                     </ComponentBox>
                 </div>
@@ -280,6 +285,14 @@ export function DesignSystemPage() {
                         <div>
                             <CategorySelections
                                 sets={variantSelections}
+                            />
+                        </div>
+                    </ComponentBox>
+                    <ComponentBox title="ProcessNode">
+                        <div className='w-full'>
+                            <ProcessNode
+                                name="Invoice"
+                                text="Thử"
                             />
                         </div>
                     </ComponentBox>
